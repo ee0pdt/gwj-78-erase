@@ -24,5 +24,6 @@ func _get_drag_data(_position):
 	return {
 		"type": "document",
 		"title": text,
-		"original_position": global_position
+		"original_position": global_position,
+		"model": self
 	}

@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://bo20ipot6i628"]
+[gd_scene load_steps=10 format=3 uid="uid://bo20ipot6i628"]
 
+[ext_resource type="Script" uid="uid://dgkxfcbe50k2v" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="Script" uid="uid://cgvc3brkqnpix" path="res://window_2.gd" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://pjn5egmtl16x" path="res://panel_container.gd" id="2_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://dbx7n44neu5r7" path="res://assets/images/trash.png" id="2_h2yge"]
@@ -26,6 +27,7 @@ height = 4
 repeat = 1
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_lquwl")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -63,7 +65,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Screen"]
+[node name="Desktop" type="PanelContainer" parent="CanvasLayer/Screen"]
+unique_name_in_owner = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -71,12 +74,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_1bvp3")
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Screen/PanelContainer"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Screen/Desktop"]
 layout_mode = 2
 texture = SubResource("GradientTexture2D_1bvp3")
 stretch_mode = 1
 
-[node name="Trash" type="Button" parent="CanvasLayer/Screen/PanelContainer/TextureRect"]
+[node name="Trash" type="Button" parent="CanvasLayer/Screen/Desktop/TextureRect"]
+unique_name_in_owner = true
+layout_mode = 0
 offset_left = 482.0
 offset_top = 342.99
 offset_right = 602.0
