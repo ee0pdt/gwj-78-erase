@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bo20ipot6i628"]
+[gd_scene load_steps=9 format=3 uid="uid://bo20ipot6i628"]
 
 [ext_resource type="Script" uid="uid://cgvc3brkqnpix" path="res://window_2.gd" id="2_0xm2m"]
-[ext_resource type="Texture2D" uid="uid://od7ewriegn1q" path="res://assets/images/Pasted Graphic.png" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://pjn5egmtl16x" path="res://panel_container.gd" id="2_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://dbx7n44neu5r7" path="res://assets/images/trash.png" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://dtb75nehl5f26" path="res://trash.gd" id="4_1bvp3"]
 
 [sub_resource type="Gradient" id="Gradient_0xm2m"]
 offsets = PackedFloat32Array(0, 0.330986, 1)
@@ -31,6 +33,8 @@ repeat = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 24.0
+offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_h2yge")
@@ -46,6 +50,7 @@ auto_translate_mode = 1
 title = "Installation"
 initial_position = 1
 size = Vector2i(320, 240)
+visible = false
 min_size = Vector2i(120, 120)
 max_size = Vector2i(640, 480)
 keep_title_visible = true
@@ -64,17 +69,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("2_1bvp3")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Screen/PanelContainer"]
 layout_mode = 2
 texture = SubResource("GradientTexture2D_1bvp3")
 stretch_mode = 1
 
-[node name="Trash" type="TextureButton" parent="CanvasLayer/Screen/PanelContainer/TextureRect"]
-offset_left = 493.0
-offset_top = 373.0
-offset_right = 557.0
-offset_bottom = 437.0
-scale = Vector2(0.2, 0.2)
-texture_normal = ExtResource("4_1bvp3")
-ignore_texture_size = true
+[node name="Trash" type="Button" parent="CanvasLayer/Screen/PanelContainer/TextureRect"]
+offset_left = 482.0
+offset_top = 342.99
+offset_right = 602.0
+offset_bottom = 414.99
+text = "Trash"
+icon = ExtResource("2_h2yge")
+script = ExtResource("4_1bvp3")
