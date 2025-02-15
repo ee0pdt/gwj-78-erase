@@ -1,12 +1,39 @@
-[gd_scene load_steps=4 format=3 uid="uid://bo20ipot6i628"]
+[gd_scene load_steps=7 format=3 uid="uid://bo20ipot6i628"]
 
-[ext_resource type="Texture2D" uid="uid://cm1hpjddpm7tu" path="res://assets/images/system_5_desktop.png" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://cgvc3brkqnpix" path="res://window_2.gd" id="2_0xm2m"]
-[ext_resource type="Texture2D" uid="uid://d2d735ao0w1je" path="res://assets/images/mac_plus.jpeg" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://od7ewriegn1q" path="res://assets/images/Pasted Graphic.png" id="4_1bvp3"]
+
+[sub_resource type="Gradient" id="Gradient_0xm2m"]
+offsets = PackedFloat32Array(0, 0.330986, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.257042, 0.257042, 0.257042, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_h2yge"]
+gradient = SubResource("Gradient_0xm2m")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="Gradient" id="Gradient_h2yge"]
+offsets = PackedFloat32Array(0.566901, 0.580986, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1bvp3"]
+gradient = SubResource("Gradient_h2yge")
+width = 4
+height = 4
+repeat = 1
 
 [node name="Node2D" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_h2yge")
 
 [node name="Screen" type="Window" parent="CanvasLayer"]
 gui_embed_subwindows = true
@@ -17,7 +44,7 @@ borderless = true
 [node name="Window" type="Window" parent="CanvasLayer/Screen"]
 auto_translate_mode = 1
 title = "Installation"
-position = Vector2i(320, 36)
+initial_position = 1
 size = Vector2i(320, 240)
 min_size = Vector2i(120, 120)
 max_size = Vector2i(640, 480)
@@ -40,16 +67,14 @@ grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Screen/PanelContainer"]
 layout_mode = 2
-texture = ExtResource("1_ig7tw")
+texture = SubResource("GradientTexture2D_1bvp3")
+stretch_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -124.0
-offset_top = -51.0
-offset_right = 530.0
-offset_bottom = 601.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_h2yge")
+[node name="Trash" type="TextureButton" parent="CanvasLayer/Screen/PanelContainer/TextureRect"]
+offset_left = 493.0
+offset_top = 373.0
+offset_right = 557.0
+offset_bottom = 437.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("4_1bvp3")
+ignore_texture_size = true
