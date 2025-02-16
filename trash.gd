@@ -1,8 +1,6 @@
-extends Button
+extends FileSystemItem
 
 @export_file() var hover_icon_file
-
-signal document_dropped(data, drop_position)
 
 var original_icon := icon
 var contents: Array[Node]
@@ -20,6 +18,9 @@ func _drop_data(at_position, data):
 	contents.append(data.model)
 	data.model.hide()
 	icon = original_icon
+	
+	var total_size = contents.reduce(func(acc, item): return acc + item.file_size, 0)
+	print(total_size)
 
 
 func _notification(what):
@@ -35,30 +36,5 @@ func _notification(what):
 			icon = original_icon
 
 
-func _ready():
-	mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
-	flat = true  # Makes the button background transparent
-	clip_text = true
-	vertical_icon_alignment = VERTICAL_ALIGNMENT_TOP
-	alignment = HORIZONTAL_ALIGNMENT_CENTER
-
-
-func _get_drag_data(_position):
-	# Create a preview of the drag
-	var preview = Button.new()
-	preview.icon = icon
-	preview.size = self.size
-	preview.text = self.text
-	preview.icon_alignment = self.icon_alignment
-	preview.vertical_icon_alignment = self.vertical_icon_alignment
-	preview.flat = true
-		
-	set_drag_preview(preview)
-	
-	# Return the data for the drop target to use
-	return {
-		"type": "trash",
-		"title": text,
-		"original_position": global_position,
-		"model": self
-	}
+func get_type() -> String:
+	return "trash"

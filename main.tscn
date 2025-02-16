@@ -111,3 +111,4 @@ flat = true
 icon_alignment = 1
 vertical_icon_alignment = 2
 script = ExtResource("6_7mycd")
+file_size = 7.5
