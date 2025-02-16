@@ -7,8 +7,10 @@ func _ready():
 	%Desktop.document_dropped.connect(_on_document_dropped)
 	%Trash.pressed.connect(_on_document_clicked)
 
+
 func _on_document_clicked():
 	print("Document clicked!")
+
 
 func _on_document_dropped(data, drop_position):
 	# Handle the drop - e.g., move the document to the new position

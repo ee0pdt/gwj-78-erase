@@ -9,7 +9,8 @@ func _ready():
 	clip_text = true
 	vertical_icon_alignment = VERTICAL_ALIGNMENT_TOP
 	alignment = HORIZONTAL_ALIGNMENT_CENTER
-	
+
+
 func _get_drag_data(_position):
 	# Create a preview of the drag
 	var preview = Button.new()

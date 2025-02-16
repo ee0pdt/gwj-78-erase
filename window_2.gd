@@ -2,6 +2,7 @@ extends Window
 
 @onready var parent_panel = get_parent()  # Ensure the parent is correctly set
 
+
 func _process(delta):
 	if parent_panel and parent_panel is Panel:
 		var parent_rect = Rect2(parent_panel.position, parent_panel.size)
