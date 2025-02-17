@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bo20ipot6i628"]
+[gd_scene load_steps=15 format=3 uid="uid://bo20ipot6i628"]
 
 [ext_resource type="Script" uid="uid://dgkxfcbe50k2v" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="Script" uid="uid://cgvc3brkqnpix" path="res://window_2.gd" id="2_0xm2m"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dbx7n44neu5r7" path="res://assets/images/trash.png" id="2_h2yge"]
 [ext_resource type="Theme" uid="uid://cmnrvs380oc6u" path="res://themes/os1_mono.tres" id="3_efxa6"]
 [ext_resource type="Script" uid="uid://dtb75nehl5f26" path="res://trash.gd" id="4_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://qyfy5t08yk3q" path="res://assets/images/os1_bkg.png" id="5_dg77c"]
 [ext_resource type="Script" uid="uid://bykqjgpcn73br" path="res://document.gd" id="6_7mycd"]
 [ext_resource type="Texture2D" uid="uid://c8l3nhsy06asv" path="res://assets/images/document.png" id="6_272bh"]
 [ext_resource type="Script" uid="uid://bgsgt0niuif7a" path="res://menu_bar.gd" id="8_5vw27"]
@@ -74,6 +75,7 @@ script = ExtResource("2_1bvp3")
 
 [node name="DesktopBackground" type="TextureRect" parent="CanvasLayer/Screen/Desktop"]
 layout_mode = 2
+texture = ExtResource("5_dg77c")
 stretch_mode = 1
 
 [node name="Trash" type="Button" parent="CanvasLayer/Screen/Desktop/DesktopBackground"]
@@ -114,9 +116,9 @@ file_size = 7.5
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 100.0
-offset_top = 300.0
+offset_top = 360.0
 offset_right = 164.0
-offset_bottom = 377.0
+offset_bottom = 437.0
 text = "Document 2"
 icon = ExtResource("6_272bh")
 flat = true
@@ -149,6 +151,7 @@ offset_right = 35.0
 offset_bottom = 31.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme = ExtResource("3_efxa6")
 prefer_global_menu = false
 script = ExtResource("8_5vw27")
 
@@ -170,6 +173,7 @@ unique_name_in_owner = true
 title = "Empty Trash"
 initial_position = 2
 size = Vector2i(462, 106)
+theme = ExtResource("3_efxa6")
 dialog_text = "Are you sure you want to delete all the items in the trash? This cannot be undone."
 dialog_autowrap = true
 
