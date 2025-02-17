@@ -17,7 +17,9 @@ func _ready():
 func _get_drag_data(_position):
 	# Create a preview of the drag
 	var preview = Button.new()
-	preview.icon = icon
+	preview.icon = self.icon
+	preview.expand_icon = self.expand_icon
+	preview.size = self.size
 	preview.size = self.size
 	preview.text = self.text
 	preview.icon_alignment = self.icon_alignment
