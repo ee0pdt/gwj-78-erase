@@ -153,7 +153,7 @@ item_count = 1
 item_0/text = "Empty Trash"
 item_0/id = 0
 
-[node name="EmptyTrashDialog" type="ConfirmationDialog" parent="."]
+[node name="EmptyTrashDialog" type="ConfirmationDialog" parent="CanvasLayer/Screen"]
 unique_name_in_owner = true
 title = "Empty Trash"
 initial_position = 2
@@ -161,4 +161,5 @@ size = Vector2i(462, 106)
 dialog_text = "Are you sure you want to delete all the items in the trash? This cannot be undone."
 dialog_autowrap = true
 
+[connection signal="id_pressed" from="CanvasLayer/Screen/MenuBar/FileMenu" to="CanvasLayer/Screen/MenuBar" method="_on_file_menu_id_pressed"]
 [connection signal="id_pressed" from="CanvasLayer/Screen/MenuBar/SpecialMenu" to="CanvasLayer/Screen/MenuBar" method="_on_special_menu_id_pressed"]
