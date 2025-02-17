@@ -1,0 +1,13 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cmnrvs380oc6u"]
+
+[ext_resource type="FontFile" uid="uid://didgilb12w1ij" path="res://assets/fonts/ChiKareGo.ttf" id="1_0070d"]
+
+[resource]
+Button/fonts/font = ExtResource("1_0070d")
+Label/fonts/font = ExtResource("1_0070d")
+RichTextLabel/fonts/bold_font = ExtResource("1_0070d")
+RichTextLabel/fonts/bold_italics_font = ExtResource("1_0070d")
+RichTextLabel/fonts/italics_font = ExtResource("1_0070d")
+RichTextLabel/fonts/mono_font = ExtResource("1_0070d")
+RichTextLabel/fonts/normal_font = ExtResource("1_0070d")
+Window/fonts/title_font = ExtResource("1_0070d")

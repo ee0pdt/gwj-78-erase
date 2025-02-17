@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://bo20ipot6i628"]
+[gd_scene load_steps=14 format=3 uid="uid://bo20ipot6i628"]
 
 [ext_resource type="Script" uid="uid://dgkxfcbe50k2v" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="Script" uid="uid://cgvc3brkqnpix" path="res://window_2.gd" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://pjn5egmtl16x" path="res://panel_container.gd" id="2_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://dbx7n44neu5r7" path="res://assets/images/trash.png" id="2_h2yge"]
+[ext_resource type="Theme" uid="uid://cmnrvs380oc6u" path="res://themes/os1_mono.tres" id="3_efxa6"]
 [ext_resource type="Script" uid="uid://dtb75nehl5f26" path="res://trash.gd" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://bykqjgpcn73br" path="res://document.gd" id="6_7mycd"]
 [ext_resource type="Texture2D" uid="uid://c8l3nhsy06asv" path="res://assets/images/document.png" id="6_272bh"]
@@ -68,6 +69,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_efxa6")
 script = ExtResource("2_1bvp3")
 
 [node name="DesktopBackground" type="TextureRect" parent="CanvasLayer/Screen/Desktop"]
@@ -176,6 +178,7 @@ title = "System Update"
 initial_position = 1
 size = Vector2i(320, 240)
 unresizable = true
+theme = ExtResource("3_efxa6")
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Screen/SystemUpdateWindow"]
 anchors_preset = 15
