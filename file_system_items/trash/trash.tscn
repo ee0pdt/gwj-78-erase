@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bepushbvyj688"]
+
+[ext_resource type="Texture2D" uid="uid://dbx7n44neu5r7" path="res://assets/images/trash.png" id="1_mob3s"]
+[ext_resource type="Script" uid="uid://dtb75nehl5f26" path="res://file_system_items/trash/trash.gd" id="2_p404l"]
+
+[node name="Trash" type="Button"]
+offset_right = 64.0
+offset_bottom = 64.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/icon_max_width = 64
+text = "Trash"
+icon = ExtResource("1_mob3s")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 2
+expand_icon = true
+script = ExtResource("2_p404l")
+hover_icon_file = "uid://7t1a23q1qagy"

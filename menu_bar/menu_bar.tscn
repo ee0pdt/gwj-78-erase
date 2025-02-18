@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://jr15xa6g2paw"]
+
+[ext_resource type="Theme" uid="uid://cmnrvs380oc6u" path="res://themes/os1_mono.tres" id="1_yfghh"]
+[ext_resource type="Script" uid="uid://bgsgt0niuif7a" path="res://menu_bar/menu_bar.gd" id="2_dpqxi"]
+
+[node name="MenuBar" type="MenuBar"]
+layout_direction = 2
+offset_right = 63.0
+offset_bottom = 14.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("1_yfghh")
+prefer_global_menu = false
+script = ExtResource("2_dpqxi")
+
+[node name="FileMenu" type="PopupMenu" parent="."]
+auto_translate_mode = 1
+title = "File"
+item_count = 1
+item_0/text = "Get Info"
+item_0/id = 0
+
+[node name="SpecialMenu" type="PopupMenu" parent="."]
+auto_translate_mode = 1
+title = "Special"
+item_count = 1
+item_0/text = "Empty Trash"
+item_0/id = 0
+
+[connection signal="id_pressed" from="FileMenu" to="." method="_on_file_menu_id_pressed"]
+[connection signal="id_pressed" from="SpecialMenu" to="." method="_on_special_menu_id_pressed"]

@@ -24,6 +24,7 @@ func _get_drag_data(_position):
 	preview.text = self.text
 	preview.icon_alignment = self.icon_alignment
 	preview.vertical_icon_alignment = self.vertical_icon_alignment
+	preview.alignment = self.alignment
 	preview.flat = true
 	
 	set_drag_preview(preview)

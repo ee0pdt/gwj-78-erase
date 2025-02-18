@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpt1rj40a0kk3"]
+
+[ext_resource type="PackedScene" uid="uid://ci6s5avk5f0ju" path="res://desktop/desktop.tscn" id="1_amvgh"]
+[ext_resource type="PackedScene" uid="uid://jr15xa6g2paw" path="res://menu_bar/menu_bar.tscn" id="2_idr0c"]
+
+[node name="Screen" type="Window"]
+auto_translate_mode = 1
+gui_embed_subwindows = true
+initial_position = 2
+size = Vector2i(640, 480)
+borderless = true
+
+[node name="Desktop" parent="." instance=ExtResource("1_amvgh")]
+unique_name_in_owner = true
+
+[node name="MenuBar" parent="." instance=ExtResource("2_idr0c")]

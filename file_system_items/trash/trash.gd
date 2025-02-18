@@ -1,6 +1,7 @@
 extends FileSystemItem
 
 @export_file() var hover_icon_file
+@export_node_path() var screen
 
 var original_icon := icon
 var contents: Array[Node]
@@ -29,7 +30,7 @@ func _notification(what):
 	match what:
 		NOTIFICATION_MOUSE_ENTER:
 			# Handle mouse hover enter
-			if %Screen.gui_is_dragging():
+			if screen and screen.gui_is_dragging():
 				icon = hover_icon
 		NOTIFICATION_MOUSE_EXIT:
 			# Handle mouse hover exit

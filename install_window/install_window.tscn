@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwrx8tafveswp"]
+
+[ext_resource type="Script" uid="uid://cgvc3brkqnpix" path="res://window_2.gd" id="1_gnn15"]
+
+[node name="Install window" type="Window"]
+auto_translate_mode = 1
+title = "Installation"
+initial_position = 1
+size = Vector2i(320, 240)
+visible = false
+min_size = Vector2i(120, 120)
+max_size = Vector2i(640, 480)
+keep_title_visible = true
+script = ExtResource("1_gnn15")
+
+[node name="Panel" type="PanelContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

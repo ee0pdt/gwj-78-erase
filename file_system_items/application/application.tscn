@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmf3a1es3sgi4"]
+
+[ext_resource type="Texture2D" uid="uid://7t1a23q1qagy" path="res://icon.svg" id="1_0a6u3"]
+[ext_resource type="Script" uid="uid://dmdsd5sq65irp" path="res://file_system_items/application/application.gd" id="2_sy4et"]
+
+[node name="Application" type="Button"]
+offset_right = 64.0
+offset_bottom = 64.0
+text = "Godot"
+icon = ExtResource("1_0a6u3")
+flat = true
+autowrap_mode = 1
+icon_alignment = 1
+vertical_icon_alignment = 2
+expand_icon = true
+script = ExtResource("2_sy4et")

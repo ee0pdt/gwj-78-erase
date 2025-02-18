@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4c8dtd2jia1d"]
+
+[ext_resource type="Texture2D" uid="uid://c8l3nhsy06asv" path="res://assets/images/document.png" id="1_rogos"]
+[ext_resource type="Script" uid="uid://bykqjgpcn73br" path="res://file_system_items/document/document.gd" id="2_u5wlp"]
+
+[node name="Document" type="Button"]
+offset_right = 89.0
+offset_bottom = 64.0
+text = "Document"
+icon = ExtResource("1_rogos")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 2
+expand_icon = true
+script = ExtResource("2_u5wlp")
+file_size = 7.5
