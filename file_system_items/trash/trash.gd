@@ -1,10 +1,26 @@
 extends FileSystemItem
 
 @export_file() var hover_icon_file
+@export_file() var full_icon_file
+@export_file() var full_hover_icon_file
 @export_node_path() var screen
 
 var original_icon := icon
+var hover_icon := icon
+var full_icon := icon
+var full_hover_icon := icon
+
 var contents: Array[Node]
+
+
+func _ready() -> void:
+	hover_icon = load(hover_icon_file) if hover_icon_file else original_icon
+	full_icon = load(full_icon_file) if full_icon_file else original_icon
+	full_hover_icon = load(full_hover_icon_file) if full_hover_icon_file else original_icon
+
+
+func _is_full() -> bool:
+	return contents.size() > 0
 
 
 func _can_drop_data(_position, data):
@@ -25,16 +41,14 @@ func _drop_data(at_position, data):
 
 
 func _notification(what):
-	var hover_icon = load(hover_icon_file)
-	
 	match what:
 		NOTIFICATION_MOUSE_ENTER:
 			# Handle mouse hover enter
 			if screen and screen.gui_is_dragging():
-				icon = hover_icon
+				icon = full_hover_icon if _is_full() else hover_icon
 		NOTIFICATION_MOUSE_EXIT:
 			# Handle mouse hover exit
-			icon = original_icon
+			icon = full_icon if _is_full() else original_icon
 
 
 func get_type() -> String:

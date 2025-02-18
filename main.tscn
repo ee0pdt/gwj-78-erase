@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bo20ipot6i628"]
+[gd_scene load_steps=5 format=3 uid="uid://bo20ipot6i628"]
 
 [ext_resource type="PackedScene" uid="uid://cpt1rj40a0kk3" path="res://screen/screen.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://d4c8dtd2jia1d" path="res://file_system_items/document/document.tscn" id="7_dg77c"]
 
 [sub_resource type="Gradient" id="Gradient_0xm2m"]
 offsets = PackedFloat32Array(0, 0.330986, 1)
@@ -28,3 +29,14 @@ texture = SubResource("GradientTexture2D_h2yge")
 
 [node name="Screen" parent="CanvasLayer" instance=ExtResource("1_ig7tw")]
 unique_name_in_owner = true
+
+[node name="Document" parent="CanvasLayer/Screen/Desktop/DesktopBackground" index="1" instance=ExtResource("7_dg77c")]
+layout_mode = 0
+offset_left = 113.0
+offset_top = 358.0
+offset_right = 202.0
+offset_bottom = 422.0
+text = "Some Doc"
+
+[editable path="CanvasLayer/Screen"]
+[editable path="CanvasLayer/Screen/Desktop"]
