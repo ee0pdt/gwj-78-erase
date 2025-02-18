@@ -2,16 +2,16 @@
 
 [ext_resource type="Script" uid="uid://dgkxfcbe50k2v" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="Script" uid="uid://cgvc3brkqnpix" path="res://window_2.gd" id="2_0xm2m"]
-[ext_resource type="Script" uid="uid://pjn5egmtl16x" path="res://panel_container.gd" id="2_1bvp3"]
+[ext_resource type="Script" uid="uid://pjn5egmtl16x" path="res://desktop/desktop.gd" id="2_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://dbx7n44neu5r7" path="res://assets/images/trash.png" id="2_h2yge"]
 [ext_resource type="Theme" uid="uid://cmnrvs380oc6u" path="res://themes/os1_mono.tres" id="3_efxa6"]
-[ext_resource type="Script" uid="uid://dtb75nehl5f26" path="res://trash.gd" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://dtb75nehl5f26" path="res://trash/trash.gd" id="4_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://qyfy5t08yk3q" path="res://assets/images/os1_bkg.png" id="5_dg77c"]
-[ext_resource type="Script" uid="uid://bykqjgpcn73br" path="res://document.gd" id="6_7mycd"]
+[ext_resource type="Script" uid="uid://bykqjgpcn73br" path="res://document/document.gd" id="6_7mycd"]
 [ext_resource type="Texture2D" uid="uid://c8l3nhsy06asv" path="res://assets/images/document.png" id="6_272bh"]
-[ext_resource type="Script" uid="uid://bgsgt0niuif7a" path="res://menu_bar.gd" id="8_5vw27"]
+[ext_resource type="Script" uid="uid://bgsgt0niuif7a" path="res://menu_bar/menu_bar.gd" id="8_5vw27"]
 [ext_resource type="Texture2D" uid="uid://7t1a23q1qagy" path="res://icon.svg" id="8_kek77"]
-[ext_resource type="Script" uid="uid://dmdsd5sq65irp" path="res://application.gd" id="9_4c57u"]
+[ext_resource type="Script" uid="uid://dmdsd5sq65irp" path="res://application/application.gd" id="9_4c57u"]
 
 [sub_resource type="Gradient" id="Gradient_0xm2m"]
 offsets = PackedFloat32Array(0, 0.330986, 1)
