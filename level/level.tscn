@@ -1,6 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bo20ipot6i628"]
+[gd_scene load_steps=8 format=3 uid="uid://bo20ipot6i628"]
 
 [ext_resource type="PackedScene" uid="uid://cpt1rj40a0kk3" path="res://screen/screen.tscn" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://dffmsepw35cgc" path="res://level/level.gd" id="1_qohg2"]
+[ext_resource type="Script" uid="uid://30qghlfcc1sv" path="res://fsm/state_machine.gd" id="4_ktfr2"]
+[ext_resource type="Script" uid="uid://0mcjqa8ciue7" path="res://level/states/idle.gd" id="5_44x8d"]
 [ext_resource type="PackedScene" uid="uid://d4c8dtd2jia1d" path="res://file_system_items/document/document.tscn" id="7_dg77c"]
 
 [sub_resource type="Gradient" id="Gradient_0xm2m"]
@@ -13,7 +16,8 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 1)
 
-[node name="Node2D" type="Node2D"]
+[node name="Level" type="Node2D"]
+script = ExtResource("1_qohg2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -30,6 +34,9 @@ texture = SubResource("GradientTexture2D_h2yge")
 [node name="Screen" parent="CanvasLayer" instance=ExtResource("1_ig7tw")]
 unique_name_in_owner = true
 
+[node name="Trash" parent="CanvasLayer/Screen/Desktop/DesktopBackground" index="0"]
+screen = NodePath("../../..")
+
 [node name="Document" parent="CanvasLayer/Screen/Desktop/DesktopBackground" index="1" instance=ExtResource("7_dg77c")]
 layout_mode = 0
 offset_left = 113.0
@@ -37,6 +44,22 @@ offset_top = 358.0
 offset_right = 202.0
 offset_bottom = 422.0
 text = "Some Doc"
+
+[node name="Document2" parent="CanvasLayer/Screen/Desktop/DesktopBackground" index="2" instance=ExtResource("7_dg77c")]
+layout_mode = 0
+offset_left = 203.0
+offset_top = 206.0
+offset_right = 292.0
+offset_bottom = 270.0
+text = "Another doc"
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("4_ktfr2")
+initial_state = NodePath("Idle")
+metadata/_custom_type_script = ExtResource("4_ktfr2")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("5_44x8d")
 
 [editable path="CanvasLayer/Screen"]
 [editable path="CanvasLayer/Screen/Desktop"]

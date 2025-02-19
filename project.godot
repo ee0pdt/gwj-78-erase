@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="GWJ 78 Erase"
-run/main_scene="uid://bo20ipot6i628"
+run/main_scene="uid://bw5cibc0jf84g"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameEvents="*res://game_events/game_events.gd"
 
 [display]
 
@@ -33,7 +37,10 @@ folder_colors={
 "res://file_system_items/document/": "purple",
 "res://file_system_items/file_system_item/": "purple",
 "res://file_system_items/trash/": "purple",
+"res://fsm/": "teal",
+"res://game_events/": "purple",
 "res://install_window/": "purple",
+"res://level/": "purple",
 "res://menu_bar/": "purple",
 "res://screen/": "purple",
 "res://system_update_window/": "purple",

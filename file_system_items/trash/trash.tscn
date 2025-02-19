@@ -16,3 +16,5 @@ vertical_icon_alignment = 2
 expand_icon = true
 script = ExtResource("2_p404l")
 hover_icon_file = "uid://7t1a23q1qagy"
+full_icon_file = "uid://3epskxw8klk0"
+full_hover_icon_file = "uid://cr0pu7ly4l4kq"
