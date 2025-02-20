@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://7aid857rtjr5"]
+
+[ext_resource type="Script" uid="uid://30qghlfcc1sv" path="res://fsm/state_machine.gd" id="1_wwsxv"]
+[ext_resource type="Script" uid="uid://bn4rtqr5voxo1" path="res://file_system_items/file_system_item/states/idle.gd" id="2_qax6f"]
+[ext_resource type="Script" uid="uid://bfrhq1wm2pka6" path="res://file_system_items/file_system_item/states/awake.gd" id="3_qax6f"]
+
+[node name="StateMachine" type="Node"]
+script = ExtResource("1_wwsxv")
+initial_state = NodePath("Asleep")
+metadata/_custom_type_script = "uid://30qghlfcc1sv"
+
+[node name="Asleep" type="Node" parent="."]
+script = ExtResource("2_qax6f")
+
+[node name="Awake" type="Node" parent="."]
+script = ExtResource("3_qax6f")

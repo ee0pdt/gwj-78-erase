@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bo20ipot6i628"]
+[gd_scene load_steps=10 format=3 uid="uid://bo20ipot6i628"]
 
 [ext_resource type="PackedScene" uid="uid://cpt1rj40a0kk3" path="res://screen/screen.tscn" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://dffmsepw35cgc" path="res://level/level.gd" id="1_qohg2"]
+[ext_resource type="PackedScene" uid="uid://dmf3a1es3sgi4" path="res://file_system_items/application/application.tscn" id="4_ivpvi"]
 [ext_resource type="Script" uid="uid://30qghlfcc1sv" path="res://fsm/state_machine.gd" id="4_ktfr2"]
-[ext_resource type="Script" uid="uid://0mcjqa8ciue7" path="res://level/states/idle.gd" id="5_44x8d"]
+[ext_resource type="Script" uid="uid://0mcjqa8ciue7" path="res://level/states/asleep.gd" id="5_44x8d"]
 [ext_resource type="PackedScene" uid="uid://wyj22wjeccw6" path="res://empty_trash_dialog/empty_trash_dialog.tscn" id="6_44x8d"]
 [ext_resource type="PackedScene" uid="uid://d4c8dtd2jia1d" path="res://file_system_items/document/document.tscn" id="7_dg77c"]
 
@@ -54,6 +55,13 @@ offset_right = 292.0
 offset_bottom = 270.0
 text = "Another doc"
 infected = true
+
+[node name="Application" parent="CanvasLayer/Screen/Desktop/DesktopBackground" index="3" instance=ExtResource("4_ivpvi")]
+layout_mode = 0
+offset_left = 443.0
+offset_top = 168.0
+offset_right = 507.0
+offset_bottom = 232.0
 
 [node name="MenuBar" parent="CanvasLayer/Screen" index="1" node_paths=PackedStringArray("trash")]
 trash = NodePath("../Desktop/DesktopBackground/Trash")

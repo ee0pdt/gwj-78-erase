@@ -1,7 +1,7 @@
 extends State
 class_name LevelState
 
-var level
+var level : Level
 
 func enter(_msg := {}) -> void:
 	level = state_machine.owner as Level
