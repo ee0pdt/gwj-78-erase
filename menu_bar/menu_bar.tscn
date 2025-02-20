@@ -9,7 +9,6 @@ offset_right = 63.0
 offset_bottom = 14.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme = ExtResource("1_yfghh")
 prefer_global_menu = false
 script = ExtResource("2_dpqxi")
 

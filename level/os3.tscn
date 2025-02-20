@@ -1,14 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://bo20ipot6i628"]
+[gd_scene load_steps=15 format=3 uid="uid://c2ny0ej7ina0g"]
 
-[ext_resource type="PackedScene" uid="uid://cpt1rj40a0kk3" path="res://screen/screen.tscn" id="1_ig7tw"]
-[ext_resource type="Script" uid="uid://dffmsepw35cgc" path="res://level/level.gd" id="1_qohg2"]
-[ext_resource type="PackedScene" uid="uid://dmf3a1es3sgi4" path="res://file_system_items/application/application.tscn" id="4_ivpvi"]
-[ext_resource type="Script" uid="uid://30qghlfcc1sv" path="res://fsm/state_machine.gd" id="4_ktfr2"]
-[ext_resource type="Script" uid="uid://0mcjqa8ciue7" path="res://level/states/asleep.gd" id="5_44x8d"]
-[ext_resource type="PackedScene" uid="uid://wyj22wjeccw6" path="res://empty_trash_dialog/empty_trash_dialog.tscn" id="6_44x8d"]
-[ext_resource type="PackedScene" uid="uid://d4c8dtd2jia1d" path="res://file_system_items/document/document.tscn" id="7_dg77c"]
-[ext_resource type="PackedScene" uid="uid://dpf8vobr127ok" path="res://info_window/info_window.tscn" id="8_0v1st"]
-[ext_resource type="Theme" uid="uid://cmnrvs380oc6u" path="res://themes/os1_mono.tres" id="9_6gtgk"]
+[ext_resource type="Theme" uid="uid://dj2vfsx2jdmu0" path="res://themes/os3.tres" id="1_tptyl"]
+[ext_resource type="Script" uid="uid://dffmsepw35cgc" path="res://level/level.gd" id="2_abgi6"]
+[ext_resource type="PackedScene" uid="uid://cpt1rj40a0kk3" path="res://screen/screen.tscn" id="3_aen5n"]
+[ext_resource type="Texture2D" uid="uid://drdspsddgy2c7" path="res://assets/images/francesco-ungaro-p3NOK6MhvKQ-unsplash.jpg" id="4_abgi6"]
+[ext_resource type="Texture2D" uid="uid://bu23vc2x32mbs" path="res://assets/images/512-TrashIcon-macosx1.png" id="5_tptyl"]
+[ext_resource type="PackedScene" uid="uid://dpf8vobr127ok" path="res://info_window/info_window.tscn" id="6_a4knm"]
+[ext_resource type="PackedScene" uid="uid://wyj22wjeccw6" path="res://empty_trash_dialog/empty_trash_dialog.tscn" id="7_t67gl"]
+[ext_resource type="Script" uid="uid://30qghlfcc1sv" path="res://fsm/state_machine.gd" id="8_ab8w2"]
+[ext_resource type="Script" uid="uid://0mcjqa8ciue7" path="res://level/states/asleep.gd" id="9_6jmfi"]
 
 [sub_resource type="Gradient" id="Gradient_0xm2m"]
 offsets = PackedFloat32Array(0, 0.330986, 1)
@@ -20,10 +20,31 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 1)
 
+[sub_resource type="Theme" id="Theme_cw150"]
+Button/fonts/font = null
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tptyl"]
+bg_color = Color(0.137255, 0.137255, 0.137255, 0.709804)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8, 0.8, 0.8, 0.47451)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_abgi6"]
+bg_color = Color(0.137255, 0.137255, 0.137255, 0.709804)
+border_width_bottom = 1
+border_color = Color(0.8, 0.8, 0.8, 0.890196)
+
 [node name="Level" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_qohg2")
+theme = ExtResource("1_tptyl")
+script = ExtResource("2_abgi6")
 metadata/_edit_horizontal_guides_ = [191.0]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -38,41 +59,58 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_h2yge")
 
-[node name="Screen" parent="CanvasLayer" instance=ExtResource("1_ig7tw")]
+[node name="Screen" parent="CanvasLayer" instance=ExtResource("3_aen5n")]
 unique_name_in_owner = true
-theme = ExtResource("9_6gtgk")
+content_scale_factor = 0.5
+theme = ExtResource("1_tptyl")
 
-[node name="Trash" parent="CanvasLayer/Screen/Desktop/DesktopBackground" index="0"]
+[node name="Desktop" parent="CanvasLayer/Screen" index="0"]
+anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+theme = SubResource("Theme_cw150")
+
+[node name="DesktopBackground" parent="CanvasLayer/Screen/Desktop" index="0"]
+texture = ExtResource("4_abgi6")
+expand_mode = 4
+stretch_mode = 0
+
+[node name="DockBackground" type="Panel" parent="CanvasLayer/Screen/Desktop/DesktopBackground" index="0"]
+layout_mode = 0
+offset_left = 41.19
+offset_top = 1013.16
+offset_right = 1241.19
+offset_bottom = 1113.16
+theme_override_styles/panel = SubResource("StyleBoxFlat_tptyl")
+
+[node name="MenuBackground" type="Panel" parent="CanvasLayer/Screen/Desktop/DesktopBackground" index="1"]
+layout_mode = 0
+offset_top = 96.18
+offset_right = 1280.0
+offset_bottom = 205.12
+theme_override_styles/panel = SubResource("StyleBoxFlat_abgi6")
+
+[node name="Trash" parent="CanvasLayer/Screen/Desktop/DesktopBackground" index="2"]
+offset_left = 1105.0
+offset_top = 969.0
+offset_right = 1233.0
+offset_bottom = 1097.0
+text = ""
+icon = ExtResource("5_tptyl")
 screen = NodePath("../../..")
 
-[node name="Document" parent="CanvasLayer/Screen/Desktop/DesktopBackground" index="1" instance=ExtResource("7_dg77c")]
-layout_mode = 0
-offset_left = 113.0
-offset_top = 358.0
-offset_right = 202.0
-offset_bottom = 422.0
-text = "Some Doc"
-
-[node name="Document2" parent="CanvasLayer/Screen/Desktop/DesktopBackground" index="2" instance=ExtResource("7_dg77c")]
-layout_mode = 0
-offset_left = 203.0
-offset_top = 206.0
-offset_right = 292.0
-offset_bottom = 270.0
-text = "Another doc"
-infected = true
-
-[node name="Application" parent="CanvasLayer/Screen/Desktop/DesktopBackground" index="3" instance=ExtResource("4_ivpvi")]
-layout_mode = 0
-offset_left = 443.0
-offset_top = 168.0
-offset_right = 507.0
-offset_bottom = 232.0
-
 [node name="MenuBar" parent="CanvasLayer/Screen" index="1" node_paths=PackedStringArray("trash")]
+offset_right = 102.0
+offset_bottom = 31.0
 trash = NodePath("../Desktop/DesktopBackground/Trash")
 
-[node name="InfoWindow" parent="CanvasLayer/Screen" instance=ExtResource("8_0v1st")]
+[node name="InfoWindow" parent="CanvasLayer/Screen" instance=ExtResource("6_a4knm")]
 unique_name_in_owner = true
 title = "Info"
 initial_position = 2
@@ -124,16 +162,16 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Name:"
 
-[node name="EmptyTrashDialog" parent="CanvasLayer/Screen" instance=ExtResource("6_44x8d")]
+[node name="EmptyTrashDialog" parent="CanvasLayer/Screen" instance=ExtResource("7_t67gl")]
 unique_name_in_owner = true
 
 [node name="StateMachine" type="Node" parent="."]
-script = ExtResource("4_ktfr2")
+script = ExtResource("8_ab8w2")
 initial_state = NodePath("Idle")
 metadata/_custom_type_script = "uid://30qghlfcc1sv"
 
 [node name="Idle" type="Node" parent="StateMachine"]
-script = ExtResource("5_44x8d")
+script = ExtResource("9_6jmfi")
 
 [node name="SoundEmptyTrash" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
