@@ -6,8 +6,19 @@ func _ready() -> void:
 	pass
 
 
-func _empty_trash() -> void:
-	print("Emptying trash")
+func _request_empty_trash() -> void:
+	%EmptyTrashDialog.show()
+
+
+func _confirm_empty_trash() -> void:
+	print("empty trash confirmed")
+	%EmptyTrashDialog.hide()
+	GameEvents.empty_trash.emit()
+	%SoundEmptyTrash.play()
+
+
+func _cancel_empty_trash() -> void:
+	%EmptyTrashDialog.hide()
 
 
 func _get_info() -> void:

@@ -11,7 +11,7 @@ var full_icon := icon
 var full_hover_icon := icon
 var screen_node: Window
 
-var contents: Array[Node]
+var contents: Array[FileSystemItem]
 
 
 func _ready() -> void:
@@ -19,6 +19,14 @@ func _ready() -> void:
 	full_icon = load(full_icon_file) if full_icon_file else original_icon
 	full_hover_icon = load(full_hover_icon_file) if full_hover_icon_file else original_icon
 	screen_node = get_node(screen)
+	GameEvents.empty_trash.connect(self._empty)
+
+
+func _empty():
+	GameEvents.files_deleted_from_trash.emit(contents)
+	contents = []
+	print("I'm empty!")
+	icon = original_icon
 
 
 func _is_full() -> bool:

@@ -7,8 +7,9 @@ signal attempt_install  # Installation window triggers this
 # File System Events
 signal file_added_to_trash(file: Node)
 signal file_removed_from_trash(file: Node)
+signal request_empty_trash
 signal empty_trash
-signal trash_emptied
+signal files_deleted_from_trash(files: Array[FileSystemItem])
 #signal system_file_deleted(file: Node)
 
 # Virus Events
