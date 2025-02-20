@@ -14,15 +14,20 @@ prefer_global_menu = false
 script = ExtResource("2_dpqxi")
 
 [node name="FileMenu" type="PopupMenu" parent="."]
+unique_name_in_owner = true
 auto_translate_mode = 1
 title = "File"
+theme = ExtResource("1_yfghh")
 item_count = 1
 item_0/text = "Get Info"
 item_0/id = 0
+item_0/disabled = true
 
 [node name="SpecialMenu" type="PopupMenu" parent="."]
+unique_name_in_owner = true
 auto_translate_mode = 1
 title = "Special"
+theme = ExtResource("1_yfghh")
 item_count = 1
 item_0/text = "Empty Trash"
 item_0/id = 0

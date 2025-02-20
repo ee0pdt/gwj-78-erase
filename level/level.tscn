@@ -54,6 +54,9 @@ offset_right = 292.0
 offset_bottom = 270.0
 text = "Another doc"
 
+[node name="MenuBar" parent="CanvasLayer/Screen" index="1" node_paths=PackedStringArray("trash")]
+trash = NodePath("../Desktop/DesktopBackground/Trash")
+
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("4_ktfr2")
 initial_state = NodePath("Idle")
@@ -68,7 +71,6 @@ bus = &"SFX"
 
 [node name="EmptyTrashDialog" parent="." instance=ExtResource("6_44x8d")]
 unique_name_in_owner = true
-visible = true
 
 [connection signal="canceled" from="EmptyTrashDialog" to="." method="_cancel_empty_trash"]
 [connection signal="confirmed" from="EmptyTrashDialog" to="." method="_confirm_empty_trash"]
