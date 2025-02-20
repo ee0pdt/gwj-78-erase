@@ -4,7 +4,7 @@ class_name FileSystemItem
 signal document_dropped(at_position)
 
 @export var file_size := 0.0
-
+@export var infected: bool = false
 
 func _ready():
 	mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
@@ -12,6 +12,16 @@ func _ready():
 	clip_text = true
 	vertical_icon_alignment = VERTICAL_ALIGNMENT_TOP
 	alignment = HORIZONTAL_ALIGNMENT_CENTER
+	self.mouse_entered.connect(_handle_mouse_entered)
+
+
+func _handle_mouse_entered() -> void:
+	if infected:
+		print("eek")
+		 # Calculate the direction vector from the cursor to the item
+		var direction = (self.position - get_global_mouse_position()).normalized()
+		# Move the item a small distance along the direction vector
+		self.position += direction * 10  # Adjust the distance as needed
 
 
 func _get_drag_data(_position):

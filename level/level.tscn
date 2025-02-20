@@ -53,6 +53,7 @@ offset_top = 206.0
 offset_right = 292.0
 offset_bottom = 270.0
 text = "Another doc"
+infected = true
 
 [node name="MenuBar" parent="CanvasLayer/Screen" index="1" node_paths=PackedStringArray("trash")]
 trash = NodePath("../Desktop/DesktopBackground/Trash")
