@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c2ny0ej7ina0g"]
+[gd_scene load_steps=14 format=3 uid="uid://c2ny0ej7ina0g"]
 
 [ext_resource type="Theme" uid="uid://dj2vfsx2jdmu0" path="res://themes/os3.tres" id="1_tptyl"]
 [ext_resource type="Script" uid="uid://dffmsepw35cgc" path="res://level/level.gd" id="2_abgi6"]
@@ -19,9 +19,6 @@ gradient = SubResource("Gradient_0xm2m")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 1)
-
-[sub_resource type="Theme" id="Theme_cw150"]
-Button/fonts/font = null
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tptyl"]
 bg_color = Color(0.137255, 0.137255, 0.137255, 0.709804)
@@ -74,7 +71,7 @@ offset_left = 0.0
 offset_top = 0.0
 offset_right = 0.0
 offset_bottom = 0.0
-theme = SubResource("Theme_cw150")
+theme = ExtResource("1_tptyl")
 
 [node name="DesktopBackground" parent="CanvasLayer/Screen/Desktop" index="0"]
 texture = ExtResource("4_abgi6")
@@ -105,16 +102,30 @@ text = ""
 icon = ExtResource("5_tptyl")
 screen = NodePath("../../..")
 
-[node name="MenuBar" parent="CanvasLayer/Screen" index="1" node_paths=PackedStringArray("trash")]
+[node name="MenuBar" parent="CanvasLayer/Screen" index="1"]
 offset_right = 102.0
 offset_bottom = 31.0
-trash = NodePath("../Desktop/DesktopBackground/Trash")
+
+[node name="FileMenu" parent="CanvasLayer/Screen/MenuBar" index="0"]
+size = Vector2i(138, 100)
+
+[node name="SpecialMenu" parent="CanvasLayer/Screen/MenuBar" index="1"]
+size = Vector2i(189, 100)
+visible = true
+content_scale_size = Vector2i(378, 200)
+content_scale_mode = 2
+content_scale_aspect = 2
+content_scale_factor = 2.0
 
 [node name="InfoWindow" parent="CanvasLayer/Screen" instance=ExtResource("6_a4knm")]
 unique_name_in_owner = true
 title = "Info"
 initial_position = 2
+size = Vector2i(640, 480)
 visible = false
+content_scale_size = Vector2i(1280, 960)
+content_scale_mode = 2
+content_scale_aspect = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Screen/InfoWindow"]
 anchors_preset = 15
@@ -184,3 +195,4 @@ bus = &"SFX"
 
 [editable path="CanvasLayer/Screen"]
 [editable path="CanvasLayer/Screen/Desktop"]
+[editable path="CanvasLayer/Screen/MenuBar"]

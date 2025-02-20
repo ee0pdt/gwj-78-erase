@@ -1,6 +1,5 @@
-[gd_scene load_steps=3 format=3 uid="uid://jr15xa6g2paw"]
+[gd_scene load_steps=2 format=3 uid="uid://jr15xa6g2paw"]
 
-[ext_resource type="Theme" uid="uid://cmnrvs380oc6u" path="res://themes/os1_mono.tres" id="1_yfghh"]
 [ext_resource type="Script" uid="uid://bgsgt0niuif7a" path="res://menu_bar/menu_bar.gd" id="2_dpqxi"]
 
 [node name="MenuBar" type="MenuBar"]
@@ -16,7 +15,6 @@ script = ExtResource("2_dpqxi")
 unique_name_in_owner = true
 auto_translate_mode = 1
 title = "File"
-theme = ExtResource("1_yfghh")
 item_count = 1
 item_0/text = "Get Info"
 item_0/id = 0
@@ -26,7 +24,7 @@ item_0/disabled = true
 unique_name_in_owner = true
 auto_translate_mode = 1
 title = "Special"
-theme = ExtResource("1_yfghh")
+size = Vector2i(117, 100)
 item_count = 1
 item_0/text = "Empty Trash"
 item_0/id = 0
