@@ -68,6 +68,7 @@ bus = &"SFX"
 
 [node name="EmptyTrashDialog" parent="." instance=ExtResource("6_44x8d")]
 unique_name_in_owner = true
+visible = true
 
 [connection signal="canceled" from="EmptyTrashDialog" to="." method="_cancel_empty_trash"]
 [connection signal="confirmed" from="EmptyTrashDialog" to="." method="_confirm_empty_trash"]
