@@ -57,7 +57,7 @@ text = "Another doc"
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("4_ktfr2")
 initial_state = NodePath("Idle")
-metadata/_custom_type_script = ExtResource("4_ktfr2")
+metadata/_custom_type_script = "uid://30qghlfcc1sv"
 
 [node name="Idle" type="Node" parent="StateMachine"]
 script = ExtResource("5_44x8d")
