@@ -20,7 +20,9 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 1)
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_qohg2")
 metadata/_edit_horizontal_guides_ = [191.0]
 
@@ -38,6 +40,7 @@ texture = SubResource("GradientTexture2D_h2yge")
 
 [node name="Screen" parent="CanvasLayer" instance=ExtResource("1_ig7tw")]
 unique_name_in_owner = true
+theme = ExtResource("9_6gtgk")
 
 [node name="Trash" parent="CanvasLayer/Screen/Desktop/DesktopBackground" index="0"]
 screen = NodePath("../../..")
@@ -69,6 +72,32 @@ offset_bottom = 232.0
 [node name="MenuBar" parent="CanvasLayer/Screen" index="1" node_paths=PackedStringArray("trash")]
 trash = NodePath("../Desktop/DesktopBackground/Trash")
 
+[node name="InfoWindow" parent="CanvasLayer/Screen" instance=ExtResource("8_0v1st")]
+title = "Info"
+initial_position = 2
+visible = false
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Screen/InfoWindow"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Screen/InfoWindow/PanelContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Screen/InfoWindow/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="CanvasLayer/Screen/InfoWindow/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Name:"
+
+[node name="Name" type="Label" parent="CanvasLayer/Screen/InfoWindow/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Name:"
+
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("4_ktfr2")
 initial_state = NodePath("Idle")
@@ -83,35 +112,6 @@ bus = &"SFX"
 
 [node name="EmptyTrashDialog" parent="." instance=ExtResource("6_44x8d")]
 unique_name_in_owner = true
-
-[node name="InfoWindow" parent="." instance=ExtResource("8_0v1st")]
-title = "Info"
-initial_position = 2
-visible = false
-theme = ExtResource("9_6gtgk")
-
-[node name="PanelContainer" type="PanelContainer" parent="InfoWindow"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("9_6gtgk")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="InfoWindow/PanelContainer"]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="InfoWindow/PanelContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="NameLabel" type="Label" parent="InfoWindow/PanelContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-theme = ExtResource("9_6gtgk")
-text = "Name:"
-
-[node name="Name" type="Label" parent="InfoWindow/PanelContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-text = "Name:"
 
 [connection signal="canceled" from="EmptyTrashDialog" to="." method="_cancel_empty_trash"]
 [connection signal="confirmed" from="EmptyTrashDialog" to="." method="_confirm_empty_trash"]
