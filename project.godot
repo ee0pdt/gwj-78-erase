@@ -39,6 +39,7 @@ folder_colors={
 "res://file_system_items/trash/": "purple",
 "res://fsm/": "teal",
 "res://game_events/": "purple",
+"res://info_window/": "purple",
 "res://install_window/": "purple",
 "res://level/": "purple",
 "res://menu_bar/": "purple",

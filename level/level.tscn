@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bo20ipot6i628"]
+[gd_scene load_steps=12 format=3 uid="uid://bo20ipot6i628"]
 
 [ext_resource type="PackedScene" uid="uid://cpt1rj40a0kk3" path="res://screen/screen.tscn" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://dffmsepw35cgc" path="res://level/level.gd" id="1_qohg2"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://0mcjqa8ciue7" path="res://level/states/asleep.gd" id="5_44x8d"]
 [ext_resource type="PackedScene" uid="uid://wyj22wjeccw6" path="res://empty_trash_dialog/empty_trash_dialog.tscn" id="6_44x8d"]
 [ext_resource type="PackedScene" uid="uid://d4c8dtd2jia1d" path="res://file_system_items/document/document.tscn" id="7_dg77c"]
+[ext_resource type="PackedScene" uid="uid://dpf8vobr127ok" path="res://info_window/info_window.tscn" id="8_0v1st"]
+[ext_resource type="Theme" uid="uid://cmnrvs380oc6u" path="res://themes/os1_mono.tres" id="9_6gtgk"]
 
 [sub_resource type="Gradient" id="Gradient_0xm2m"]
 offsets = PackedFloat32Array(0, 0.330986, 1)
@@ -20,6 +22,7 @@ fill_to = Vector2(1, 1)
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_qohg2")
+metadata/_edit_horizontal_guides_ = [191.0]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -80,6 +83,35 @@ bus = &"SFX"
 
 [node name="EmptyTrashDialog" parent="." instance=ExtResource("6_44x8d")]
 unique_name_in_owner = true
+
+[node name="InfoWindow" parent="." instance=ExtResource("8_0v1st")]
+title = "Info"
+initial_position = 2
+visible = false
+theme = ExtResource("9_6gtgk")
+
+[node name="PanelContainer" type="PanelContainer" parent="InfoWindow"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("9_6gtgk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InfoWindow/PanelContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="InfoWindow/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="InfoWindow/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("9_6gtgk")
+text = "Name:"
+
+[node name="Name" type="Label" parent="InfoWindow/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Name:"
 
 [connection signal="canceled" from="EmptyTrashDialog" to="." method="_cancel_empty_trash"]
 [connection signal="confirmed" from="EmptyTrashDialog" to="." method="_confirm_empty_trash"]

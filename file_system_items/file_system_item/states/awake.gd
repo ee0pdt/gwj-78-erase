@@ -21,8 +21,8 @@ func update(_delta: float) -> void:
 		steps_remaining = randi() % 20 + 10
 	var new_position = file_system_item.position + direction * 5
 	var window_size = get_viewport().size
-	new_position.x = clamp(new_position.x, 0, window_size.x)
-	new_position.y = clamp(new_position.y, 0, window_size.y)
+	new_position.x = clamp(new_position.x, 0, window_size.x - file_system_item.size.x)
+	new_position.y = clamp(new_position.y, 0, window_size.y - file_system_item.size.y)
 	file_system_item.position = new_position
 	steps_remaining -= 1
 
