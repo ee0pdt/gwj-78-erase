@@ -14,10 +14,15 @@ func _ready():
 	vertical_icon_alignment = VERTICAL_ALIGNMENT_TOP
 	alignment = HORIZONTAL_ALIGNMENT_CENTER
 	self.mouse_entered.connect(_handle_mouse_entered)
+	self.button_up.connect(_handle_mouseup)
 
 
 func _handle_mouse_entered() -> void:
 	pass
+
+
+func _handle_mouseup() -> void:
+	GameEvents.item_clicked.emit(self)
 
 
 func _get_drag_data(_position):

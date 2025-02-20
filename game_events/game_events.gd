@@ -5,8 +5,8 @@ extends Node
 signal attempt_install  # Installation window triggers this
 
 # File System Events
-signal file_added_to_trash(file: Node)
-signal file_removed_from_trash(file: Node)
+signal file_added_to_trash(file: FileSystemItem)
+signal file_removed_from_trash(file: FileSystemItem)
 signal request_empty_trash
 signal empty_trash
 signal files_deleted_from_trash(files: Array[FileSystemItem])
@@ -22,7 +22,9 @@ signal system_crash(reason: String)
 #signal system_restored()
 
 # File Interaction Events
+signal item_clicked(file: FileSystemItem)
 signal get_info
+signal desktop_clicked
 #signal file_drag_started(file: Node)
 #signal file_drag_ended(file: Node)
 #signal file_hover_started(file: Node)

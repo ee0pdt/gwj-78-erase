@@ -28,3 +28,9 @@ func _on_document_dropped(data, drop_position):
 	var doc_node = data.model
 	if doc_node:
 		doc_node.global_position = drop_position
+
+
+func _on_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		print("desktop clicked")
+		GameEvents.desktop_clicked.emit()
