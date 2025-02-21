@@ -3,7 +3,6 @@ class_name Level
 
 
 var currently_selected_item: FileSystemItem = null
-@onready var os_menu: OSMenu = $CanvasLayer/Screen/MenuBar
 
 
 # Called when the node enters the scene tree for the first time.
@@ -46,7 +45,7 @@ func _handle_close_info():
 func _handle_item_clicked(item: FileSystemItem):
 	print("_handle_item_clicked")
 	currently_selected_item = item
-	os_menu.enable_file_info()
+	%MenuBar.enable_file_info()
 
 
 func _handle_desktop_clicked():
@@ -56,13 +55,13 @@ func _handle_desktop_clicked():
 		return
 	
 	currently_selected_item.release_focus()
-	os_menu.disable_file_info()
+	%MenuBar.disable_file_info()
 	currently_selected_item = null
 
 
 func _handle_files_deleted_from_trash(files: Array[FileSystemItem]):
-	os_menu.disable_empty_trash()
+	%MenuBar.disable_empty_trash()
 
 
 func _handle_file_added_to_trash(file: FileSystemItem):
-	os_menu.enable_empty_trash()
+	%MenuBar.enable_empty_trash()

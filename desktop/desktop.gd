@@ -1,4 +1,4 @@
-extends PanelContainer
+extends Panel
 
 
 signal document_dropped(data, drop_position)

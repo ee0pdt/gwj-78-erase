@@ -18,7 +18,7 @@ func _ready() -> void:
 	hover_icon = load(hover_icon_file) if hover_icon_file else original_icon
 	full_icon = load(full_icon_file) if full_icon_file else original_icon
 	full_hover_icon = load(full_hover_icon_file) if full_hover_icon_file else original_icon
-	screen_node = get_node(screen)
+	screen_node = get_viewport()
 	GameEvents.empty_trash.connect(self._empty)
 
 
