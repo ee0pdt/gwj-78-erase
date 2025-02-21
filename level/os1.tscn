@@ -115,6 +115,10 @@ script = ExtResource("9_8yfpd")
 unique_name_in_owner = true
 bus = &"SFX"
 
+[node name="SoundItemAddedToTrash" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+bus = &"SFX"
+
 [connection signal="gui_input" from="Desktop" to="Desktop" method="_on_gui_input"]
 [connection signal="close_requested" from="InfoWindow" to="." method="_handle_close_info"]
 [connection signal="canceled" from="EmptyTrashDialog" to="." method="_cancel_empty_trash"]
