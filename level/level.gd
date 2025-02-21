@@ -72,7 +72,7 @@ func _handle_file_added_to_trash(file: FileSystemItem):
 	%SoundItemAddedToTrash.play()
 
 
-func _handle_attempt_install():
+func _handle_attempt_install() -> void:
 	var space_available = hard_drive_capacity - _calc_storage_usage()
 	
 	if space_available >= required_space_for_install:
@@ -82,6 +82,10 @@ func _handle_attempt_install():
 		%InstallWindow.set_info(info)
 	
 	%InstallWindow.show()
+
+
+func _handle_close_installer() -> void:
+	%InstallWindow.hide()
 
 
 func _calc_storage_usage() -> float:

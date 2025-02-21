@@ -114,6 +114,7 @@ offset_left = 757.0
 offset_top = 275.0
 offset_right = 885.0
 offset_bottom = 395.0
+document_contents = "Hello world"
 
 [node name="MenuBar" parent="Desktop" instance=ExtResource("6_aen5n")]
 unique_name_in_owner = true
@@ -159,5 +160,6 @@ visible = false
 [connection signal="close_requested" from="InfoWindow" to="." method="_handle_close_info"]
 [connection signal="canceled" from="EmptyTrashDialog" to="." method="_cancel_empty_trash"]
 [connection signal="confirmed" from="EmptyTrashDialog" to="." method="_confirm_empty_trash"]
+[connection signal="close_requested" from="InstallWindow" to="." method="_handle_close_installer"]
 
 [editable path="EmptyTrashDialog"]
