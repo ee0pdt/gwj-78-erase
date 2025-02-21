@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c2ny0ej7ina0g"]
+[gd_scene load_steps=20 format=3 uid="uid://c2ny0ej7ina0g"]
 
 [ext_resource type="Theme" uid="uid://dj2vfsx2jdmu0" path="res://themes/os3.tres" id="1_tptyl"]
 [ext_resource type="Script" uid="uid://dffmsepw35cgc" path="res://level/level.gd" id="2_abgi6"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://wyj22wjeccw6" path="res://empty_trash_dialog/empty_trash_dialog.tscn" id="7_t67gl"]
 [ext_resource type="Script" uid="uid://30qghlfcc1sv" path="res://fsm/state_machine.gd" id="8_ab8w2"]
 [ext_resource type="Script" uid="uid://0mcjqa8ciue7" path="res://level/states/asleep.gd" id="9_6jmfi"]
+[ext_resource type="Texture2D" uid="uid://cjast7ach5qcn" path="res://assets/images/video-camera-technology.svg" id="9_ab8w2"]
 [ext_resource type="PackedScene" uid="uid://cwrx8tafveswp" path="res://install_window/install_window.tscn" id="14_a4knm"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aen5n"]
@@ -102,13 +103,23 @@ text = ""
 icon = ExtResource("5_tptyl")
 screen = NodePath("")
 
-[node name="Application" parent="Desktop" instance=ExtResource("5_iqeg5")]
+[node name="Godot" parent="Desktop" instance=ExtResource("5_iqeg5")]
 layout_mode = 0
 offset_left = 71.0
 offset_top = 583.0
 offset_right = 191.0
 offset_bottom = 703.0
 file_size = 0.5
+
+[node name="VideoChat" parent="Desktop" instance=ExtResource("5_iqeg5")]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 583.0
+offset_right = 289.0
+offset_bottom = 703.0
+text = "VideoChat"
+icon = ExtResource("9_ab8w2")
+file_size = 2.5
 
 [node name="ReadMe" parent="Desktop" instance=ExtResource("4_fjy5s")]
 layout_mode = 0
