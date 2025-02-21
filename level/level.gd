@@ -61,6 +61,9 @@ func _handle_desktop_clicked():
 
 
 func _handle_files_deleted_from_trash(files: Array[FileSystemItem]):
+	for file in files:
+		file.queue_free()
+	
 	%MenuBar.disable_empty_trash()
 
 

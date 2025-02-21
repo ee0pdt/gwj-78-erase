@@ -106,6 +106,7 @@ offset_left = 555.0
 offset_top = 218.0
 offset_right = 675.0
 offset_bottom = 338.0
+file_size = 0.5
 
 [node name="Document" parent="Desktop" instance=ExtResource("4_fjy5s")]
 layout_mode = 0
