@@ -3,6 +3,7 @@ extends Node
 
 # Installation Events
 signal attempt_install  # Installation window triggers this
+signal attempt_downgrade
 
 # File System Events
 signal file_added_to_trash(file: FileSystemItem)

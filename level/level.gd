@@ -2,6 +2,7 @@ extends Control
 class_name Level
 
 
+@export var os_version := 3.0
 @export var hard_drive_capacity := 10.0
 @export var required_space_for_downgrade := 5.0
 @export var required_space_for_install := 5.0
@@ -75,7 +76,9 @@ func _handle_file_added_to_trash(file: FileSystemItem):
 func _handle_attempt_install() -> void:
 	var space_available = hard_drive_capacity - _calc_storage_usage()
 	
-	if space_available >= required_space_for_install:
+	if os_version > 1.0:
+		%InstallWindow.set_info("This installer is not compatible with your OS. Please downgrade first.")
+	elif space_available >= required_space_for_install:
 		%InstallWindow.set_info("Installation commencing...")
 	else:
 		var info = str("Not enough room to install. You need ", required_space_for_install - space_available, "GB more. Try deleting some files.")

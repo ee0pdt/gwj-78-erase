@@ -13,6 +13,7 @@ func enter(_msg := {}) -> void:
 	GameEvents.file_added_to_trash.connect(level._handle_file_added_to_trash)
 	GameEvents.files_deleted_from_trash.connect(level._handle_files_deleted_from_trash)
 	GameEvents.attempt_install.connect(level._handle_attempt_install)
+	GameEvents.attempt_downgrade.connect(level._handle_attempt_downgrade)
 
 
 func exit() -> void:
@@ -23,3 +24,4 @@ func exit() -> void:
 	GameEvents.file_added_to_trash.disconnect(level._handle_file_added_to_trash)
 	GameEvents.files_deleted_from_trash.disconnect(level._handle_files_deleted_from_trash)
 	GameEvents.attempt_install.disconnect(level._handle_attempt_install)
+	GameEvents.attempt_downgrade.disconnect(level._handle_attempt_downgrade)
