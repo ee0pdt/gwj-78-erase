@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c2ny0ej7ina0g"]
+[gd_scene load_steps=29 format=3 uid="uid://c2ny0ej7ina0g"]
 
 [ext_resource type="Theme" uid="uid://dj2vfsx2jdmu0" path="res://themes/os3.tres" id="1_tptyl"]
 [ext_resource type="Script" uid="uid://dffmsepw35cgc" path="res://level/level.gd" id="2_abgi6"]
@@ -17,6 +17,13 @@
 [ext_resource type="Texture2D" uid="uid://cjast7ach5qcn" path="res://assets/images/video-camera-technology.svg" id="9_ab8w2"]
 [ext_resource type="PackedScene" uid="uid://dthypb60ncs4k" path="res://file_system_items/downgrader/downgrader.tscn" id="12_6jmfi"]
 [ext_resource type="PackedScene" uid="uid://cwrx8tafveswp" path="res://install_window/install_window.tscn" id="14_a4knm"]
+[ext_resource type="AudioStream" uid="uid://dbwjphmrgajy7" path="res://assets/audio/sfx/sfx_emptyTrash_hifi.wav" id="17_xvixd"]
+[ext_resource type="AudioStream" uid="uid://duw4vj2ewo514" path="res://assets/audio/sfx/sfx_throwaway_hifi.wav" id="18_kquc8"]
+[ext_resource type="AudioStream" uid="uid://bpk1ogos1hdri" path="res://assets/audio/music/music_hifi_loop.ogg" id="18_n8232"]
+[ext_resource type="AudioStream" uid="uid://cfseyacgyg6np" path="res://assets/audio/sfx/click/sfx_click1.wav" id="21_lc5mr"]
+[ext_resource type="AudioStream" uid="uid://c1ah206sschrc" path="res://assets/audio/sfx/click/sfx_click2.wav" id="22_7ikqj"]
+[ext_resource type="AudioStream" uid="uid://duglvfwhnr7qp" path="res://assets/audio/sfx/click/sfx_click3.wav" id="23_07nky"]
+[ext_resource type="AudioStream" uid="uid://wnfgdkip3462" path="res://assets/audio/sfx/click/sfx_click4.wav" id="24_vf410"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aen5n"]
 texture = ExtResource("4_abgi6")
@@ -37,6 +44,13 @@ corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_n4dsa"]
+streams_count = 4
+stream_0/stream = ExtResource("21_lc5mr")
+stream_1/stream = ExtResource("22_7ikqj")
+stream_2/stream = ExtResource("23_07nky")
+stream_3/stream = ExtResource("24_vf410")
 
 [node name="OS3" type="Control"]
 layout_mode = 3
@@ -180,10 +194,12 @@ script = ExtResource("9_6jmfi")
 
 [node name="SoundEmptyTrash" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
+stream = ExtResource("17_xvixd")
 bus = &"SFX"
 
 [node name="SoundItemAddedToTrash" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
+stream = ExtResource("18_kquc8")
 bus = &"SFX"
 
 [node name="InstallWindow" parent="." instance=ExtResource("14_a4knm")]
@@ -192,7 +208,13 @@ visible = false
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
+stream = ExtResource("18_n8232")
+autoplay = true
 bus = &"Music"
+
+[node name="mouseclicks" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_n4dsa")
+bus = &"SFX"
 
 [connection signal="gui_input" from="Desktop" to="Desktop" method="_on_gui_input"]
 [connection signal="close_requested" from="InfoWindow" to="." method="_handle_close_info"]

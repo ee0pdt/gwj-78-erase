@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bfhe57ypw3i5u"]
+[gd_scene load_steps=24 format=3 uid="uid://bfhe57ypw3i5u"]
 
 [ext_resource type="Theme" uid="uid://cmnrvs380oc6u" path="res://themes/os1_mono.tres" id="1_1b1c6"]
 [ext_resource type="Script" uid="uid://dffmsepw35cgc" path="res://level/level.gd" id="2_1d7e5"]
@@ -13,6 +13,13 @@
 [ext_resource type="Script" uid="uid://30qghlfcc1sv" path="res://fsm/state_machine.gd" id="8_k2s33"]
 [ext_resource type="Script" uid="uid://0mcjqa8ciue7" path="res://level/states/asleep.gd" id="9_8yfpd"]
 [ext_resource type="PackedScene" uid="uid://jr15xa6g2paw" path="res://menu_bar/menu_bar.tscn" id="9_jb3nm"]
+[ext_resource type="AudioStream" uid="uid://pvya3ndgshk5" path="res://assets/audio/music/music_lofi_loop.ogg" id="14_1b1c6"]
+[ext_resource type="AudioStream" uid="uid://dy6lng8qxlkt7" path="res://assets/audio/sfx/sfx_emptyTrash_lofi.wav" id="14_ksk6k"]
+[ext_resource type="AudioStream" uid="uid://caesi6x3j5l2" path="res://assets/audio/sfx/sfx_throwaway_lofi.wav" id="15_3bxrh"]
+[ext_resource type="AudioStream" uid="uid://cfseyacgyg6np" path="res://assets/audio/sfx/click/sfx_click1.wav" id="17_2cq1c"]
+[ext_resource type="AudioStream" uid="uid://c1ah206sschrc" path="res://assets/audio/sfx/click/sfx_click2.wav" id="18_nl656"]
+[ext_resource type="AudioStream" uid="uid://duglvfwhnr7qp" path="res://assets/audio/sfx/click/sfx_click3.wav" id="19_aerqq"]
+[ext_resource type="AudioStream" uid="uid://wnfgdkip3462" path="res://assets/audio/sfx/click/sfx_click4.wav" id="20_k80li"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k2s33"]
 texture = ExtResource("4_euys8")
@@ -21,6 +28,13 @@ texture = ExtResource("4_euys8")
 bg_color = Color(1, 1, 1, 1)
 border_width_bottom = 1
 border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_f1j2c"]
+streams_count = 4
+stream_0/stream = ExtResource("17_2cq1c")
+stream_1/stream = ExtResource("18_nl656")
+stream_2/stream = ExtResource("19_aerqq")
+stream_3/stream = ExtResource("20_k80li")
 
 [node name="OS1" type="Control"]
 layout_mode = 3
@@ -138,15 +152,23 @@ script = ExtResource("9_8yfpd")
 
 [node name="SoundEmptyTrash" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
+stream = ExtResource("14_ksk6k")
 bus = &"SFX"
 
 [node name="SoundItemAddedToTrash" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
+stream = ExtResource("15_3bxrh")
 bus = &"SFX"
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
+stream = ExtResource("14_1b1c6")
+autoplay = true
 bus = &"Music"
+
+[node name="mouseclicks" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_f1j2c")
+bus = &"SFX"
 
 [connection signal="gui_input" from="Desktop" to="Desktop" method="_on_gui_input"]
 [connection signal="close_requested" from="InfoWindow" to="." method="_handle_close_info"]
