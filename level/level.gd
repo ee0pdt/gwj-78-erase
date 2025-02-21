@@ -31,10 +31,7 @@ func _get_info() -> void:
 	
 	print("Getting info")
 	
-	%FileName.text = currently_selected_item.text
-	%FileType.text = currently_selected_item.get_type()
-	%FileSize.text = str(currently_selected_item.file_size)
-	
+	%InfoWindow.set_info(currently_selected_item)
 	%InfoWindow.show()
 
 
