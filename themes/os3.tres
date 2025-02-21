@@ -101,10 +101,18 @@ corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_34a63"]
-bg_color = Color(1, 1, 1, 1)
+bg_color = Color(0.8, 0.8, 0.8, 0.278431)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bbvwv"]
-bg_color = Color(1, 1, 1, 1)
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+bg_color = Color(1, 1, 1, 0.137255)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ndsb5"]
 content_margin_left = 20.0
@@ -156,7 +164,6 @@ Button/styles/focus = SubResource("StyleBoxEmpty_24pj0")
 Button/styles/hover = SubResource("StyleBoxFlat_87cn0")
 Button/styles/normal = SubResource("StyleBoxFlat_6tcwe")
 Label/colors/font_color = Color(0, 0, 0, 1)
-Label/font_sizes/font_size = 28
 MenuBar/colors/font_color = Color(1, 1, 1, 1)
 MenuBar/font_sizes/font_size = 28
 MenuBar/fonts/font = ExtResource("1_v40bh")

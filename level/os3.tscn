@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c2ny0ej7ina0g"]
+[gd_scene load_steps=19 format=3 uid="uid://c2ny0ej7ina0g"]
 
 [ext_resource type="Theme" uid="uid://dj2vfsx2jdmu0" path="res://themes/os3.tres" id="1_tptyl"]
 [ext_resource type="Script" uid="uid://dffmsepw35cgc" path="res://level/level.gd" id="2_abgi6"]
@@ -7,12 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://bepushbvyj688" path="res://file_system_items/trash/trash.tscn" id="4_aen5n"]
 [ext_resource type="PackedScene" uid="uid://d4c8dtd2jia1d" path="res://file_system_items/document/document.tscn" id="4_fjy5s"]
 [ext_resource type="PackedScene" uid="uid://dmf3a1es3sgi4" path="res://file_system_items/application/application.tscn" id="5_iqeg5"]
+[ext_resource type="PackedScene" uid="uid://b27g4gvam75qu" path="res://file_system_items/installer/installer.tscn" id="5_t67gl"]
 [ext_resource type="Texture2D" uid="uid://bu23vc2x32mbs" path="res://assets/images/512-TrashIcon-macosx1.png" id="5_tptyl"]
 [ext_resource type="PackedScene" uid="uid://dpf8vobr127ok" path="res://info_window/info_window.tscn" id="6_a4knm"]
 [ext_resource type="PackedScene" uid="uid://jr15xa6g2paw" path="res://menu_bar/menu_bar.tscn" id="6_aen5n"]
 [ext_resource type="PackedScene" uid="uid://wyj22wjeccw6" path="res://empty_trash_dialog/empty_trash_dialog.tscn" id="7_t67gl"]
 [ext_resource type="Script" uid="uid://30qghlfcc1sv" path="res://fsm/state_machine.gd" id="8_ab8w2"]
 [ext_resource type="Script" uid="uid://0mcjqa8ciue7" path="res://level/states/asleep.gd" id="9_6jmfi"]
+[ext_resource type="PackedScene" uid="uid://cwrx8tafveswp" path="res://install_window/install_window.tscn" id="14_a4knm"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aen5n"]
 texture = ExtResource("4_abgi6")
@@ -58,6 +60,13 @@ grow_vertical = 2
 theme = ExtResource("1_tptyl")
 theme_override_styles/panel = SubResource("StyleBoxTexture_aen5n")
 script = ExtResource("3_abgi6")
+
+[node name="Installer" parent="Desktop" instance=ExtResource("5_t67gl")]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 131.0
+offset_right = 254.0
+offset_bottom = 259.0
 
 [node name="MenuBackground" type="Panel" parent="Desktop"]
 custom_minimum_size = Vector2(0, 50)
@@ -124,7 +133,6 @@ content_scale_aspect = 1
 [node name="EmptyTrashDialog" parent="." instance=ExtResource("7_t67gl")]
 unique_name_in_owner = true
 size = Vector2i(462, 200)
-visible = true
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("8_ab8w2")
@@ -141,6 +149,10 @@ bus = &"SFX"
 [node name="SoundItemAddedToTrash" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 bus = &"SFX"
+
+[node name="InstallWindow" parent="." instance=ExtResource("14_a4knm")]
+unique_name_in_owner = true
+visible = false
 
 [connection signal="gui_input" from="Desktop" to="Desktop" method="_on_gui_input"]
 [connection signal="close_requested" from="InfoWindow" to="." method="_handle_close_info"]

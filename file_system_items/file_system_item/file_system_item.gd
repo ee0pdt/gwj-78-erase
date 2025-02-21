@@ -15,6 +15,7 @@ func _ready():
 	alignment = HORIZONTAL_ALIGNMENT_CENTER
 	self.mouse_entered.connect(_handle_mouse_entered)
 	self.button_up.connect(_handle_mouseup)
+	self.add_to_group("FileSystemItems")
 
 
 func _handle_mouse_entered() -> void:
