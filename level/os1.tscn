@@ -1,7 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://bfhe57ypw3i5u"]
+[gd_scene load_steps=15 format=3 uid="uid://bfhe57ypw3i5u"]
 
 [ext_resource type="Theme" uid="uid://cmnrvs380oc6u" path="res://themes/os1_mono.tres" id="1_1b1c6"]
-[ext_resource type="Theme" uid="uid://dj2vfsx2jdmu0" path="res://themes/os3.tres" id="1_fty6r"]
 [ext_resource type="Script" uid="uid://dffmsepw35cgc" path="res://level/level.gd" id="2_1d7e5"]
 [ext_resource type="Script" uid="uid://pjn5egmtl16x" path="res://desktop/desktop.gd" id="4_1b1c6"]
 [ext_resource type="PackedScene" uid="uid://d4c8dtd2jia1d" path="res://file_system_items/document/document.tscn" id="4_7hnyc"]
@@ -45,7 +44,6 @@ offset_right = -1.0
 offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_fty6r")
 theme_override_styles/panel = SubResource("StyleBoxTexture_k2s33")
 script = ExtResource("4_1b1c6")
 
@@ -75,16 +73,16 @@ screen = NodePath("")
 layout_mode = 0
 offset_left = 694.0
 offset_top = 169.0
-offset_right = 783.0
-offset_bottom = 233.0
+offset_right = 822.0
+offset_bottom = 297.0
 infected = true
 
 [node name="Application" parent="Desktop" instance=ExtResource("5_euys8")]
 layout_mode = 0
-offset_left = 707.0
-offset_top = 213.0
-offset_right = 771.0
-offset_bottom = 277.0
+offset_left = 985.0
+offset_top = 121.0
+offset_right = 1113.0
+offset_bottom = 249.0
 
 [node name="MenuBar" parent="." instance=ExtResource("9_jb3nm")]
 unique_name_in_owner = true
