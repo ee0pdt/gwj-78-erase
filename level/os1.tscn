@@ -96,6 +96,21 @@ layout_mode = 0
 offset_right = 120.0
 offset_bottom = 120.0
 
+[node name="Folder2" parent="Desktop/Folder/Window/PanelContainer" index="1" instance=ExtResource("8_euys8")]
+layout_mode = 0
+offset_left = 138.0
+offset_top = 1.0
+offset_right = 258.0
+offset_bottom = 121.0
+
+[node name="Window" parent="Desktop/Folder/Window/PanelContainer/Folder2" index="1"]
+auto_translate_mode = 1
+
+[node name="Document" parent="Desktop/Folder/Window/PanelContainer/Folder2/Window/PanelContainer" index="0" instance=ExtResource("4_7hnyc")]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 120.0
+
 [node name="MenuBar" parent="." instance=ExtResource("9_jb3nm")]
 unique_name_in_owner = true
 layout_mode = 0
@@ -139,4 +154,5 @@ bus = &"Music"
 [connection signal="confirmed" from="EmptyTrashDialog" to="." method="_confirm_empty_trash"]
 
 [editable path="Desktop/Folder"]
+[editable path="Desktop/Folder/Window/PanelContainer/Folder2"]
 [editable path="EmptyTrashDialog"]
