@@ -129,11 +129,6 @@ offset_top = 124.0
 offset_right = 453.0
 offset_bottom = 244.0
 text = "Read Me"
-file_contents = "[center]Instructions[/center]
-
-Before you can install the game you need to downgrade your OS to an older version. Run the Downgrader app and follow the instructions.
-
-Once the downgrade is complete you will be able to run the Installer"
 file_size = 0.01
 
 [node name="LanguageFiles" parent="Desktop" instance=ExtResource("4_fjy5s")]
@@ -143,73 +138,6 @@ offset_top = 227.0
 offset_right = 1026.0
 offset_bottom = 347.0
 text = "Language Files"
-file_contents = "<!-- File Operations -->
-<string name=\"file_copy\">Copy</string>
-<string name=\"file_move\">Move</string>
-<string name=\"file_delete\">Delete</string>
-<string name=\"file_rename\">Rename</string>
-<string name=\"file_duplicate\">Make Copy</string>
-<string name=\"file_size\">Size: %d KB</string>
-<string name=\"file_created\">Created: %s</string>
-<string name=\"file_modified\">Modified: %s</string>
-
-<!-- Trash Management -->
-<string name=\"trash_empty\">Empty Bin</string>
-<string name=\"trash_warning\">Are you sure you want to permanently delete these items?</string>
-<string name=\"trash_size\">Items in Bin: %d (%s KB)</string>
-<string name=\"trash_empty_verb\">Empty</string>
-<string name=\"trash_full\">Full</string>
-
-<!-- System Updates -->
-<string name=\"update_available\">A system update is available.</string>
-<string name=\"update_space_required\">Required space: %d KB</string>
-<string name=\"update_preparing\">Preparing to update system...</string>
-<string name=\"update_installing\">Installing update...</string>
-<string name=\"update_complete\">Update complete. Please restart.</string>
-<string name=\"update_error\">Update failed: %s</string>
-
-<!-- Dialog Buttons -->
-<string name=\"button_ok\">OK</string>
-<string name=\"button_cancel\">Cancel</string>
-<string name=\"button_yes\">Yes</string>
-<string name=\"button_no\">No</string>
-<string name=\"button_continue\">Continue</string>
-<string name=\"button_abort\">Stop</string>
-
-<!-- Menu Items -->
-<string name=\"menu_file\">File</string>
-<string name=\"menu_edit\">Edit</string>
-<string name=\"menu_view\">View</string>
-<string name=\"menu_special\">Special</string>
-<string name=\"menu_help\">Help</string>
-
-<!-- Status Messages -->
-<string name=\"status_ready\">Ready</string>
-<string name=\"status_processing\">Processing...</string>
-<string name=\"status_waiting\">Please wait...</string>
-<string name=\"status_disk_space\">Available Space: %d KB</string>
-<string name=\"status_item_count\">%d items</string>
-
-<!-- System Resources -->
-<string name=\"resource_memory\">Memory: %d KB used of %d KB</string>
-<string name=\"resource_disk\">Disk Space: %d KB free of %d KB</string>
-<string name=\"resource_cpu\">System Load: %d%%</string>
-
-<!-- Window Management -->
-<string name=\"window_close\">Close</string>
-<string name=\"window_minimise\">Minimise</string>
-<string name=\"window_zoom\">Zoom</string>
-<string name=\"window_restore\">Restore</string>
-<string name=\"window_move\">Move</string>
-<string name=\"window_resize\">Resize</string>
-
-<!-- File Properties -->
-<string name=\"properties_type\">Type: %s</string>
-<string name=\"properties_location\">Location: %s</string>
-<string name=\"properties_size\">Size: %s KB (%d bytes)</string>
-<string name=\"properties_created\">Created: %s</string>
-<string name=\"properties_modified\">Modified: %s</string>
-<string name=\"properties_accessed\">Last accessed: %s</string>"
 file_size = 0.01
 
 [node name="MenuBar" parent="Desktop" instance=ExtResource("6_aen5n")]

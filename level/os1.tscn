@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bfhe57ypw3i5u"]
+[gd_scene load_steps=16 format=3 uid="uid://bfhe57ypw3i5u"]
 
 [ext_resource type="Theme" uid="uid://cmnrvs380oc6u" path="res://themes/os1_mono.tres" id="1_1b1c6"]
 [ext_resource type="Script" uid="uid://dffmsepw35cgc" path="res://level/level.gd" id="2_1d7e5"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dmf3a1es3sgi4" path="res://file_system_items/application/application.tscn" id="5_euys8"]
 [ext_resource type="PackedScene" uid="uid://dpf8vobr127ok" path="res://info_window/info_window.tscn" id="6_1b1c6"]
 [ext_resource type="PackedScene" uid="uid://wyj22wjeccw6" path="res://empty_trash_dialog/empty_trash_dialog.tscn" id="7_0vag3"]
+[ext_resource type="PackedScene" uid="uid://byxkbllcqjjr3" path="res://file_system_items/folder/folder.tscn" id="8_euys8"]
 [ext_resource type="Script" uid="uid://30qghlfcc1sv" path="res://fsm/state_machine.gd" id="8_k2s33"]
 [ext_resource type="Script" uid="uid://0mcjqa8ciue7" path="res://level/states/asleep.gd" id="9_8yfpd"]
 [ext_resource type="PackedScene" uid="uid://jr15xa6g2paw" path="res://menu_bar/menu_bar.tscn" id="9_jb3nm"]
@@ -66,7 +67,6 @@ offset_right = 1277.0
 offset_bottom = 706.0
 grow_horizontal = 0
 grow_vertical = 2
-text = ""
 screen = NodePath("")
 
 [node name="Document" parent="Desktop" instance=ExtResource("4_7hnyc")]
@@ -83,6 +83,18 @@ offset_left = 985.0
 offset_top = 121.0
 offset_right = 1113.0
 offset_bottom = 249.0
+
+[node name="Folder" parent="Desktop" instance=ExtResource("8_euys8")]
+layout_mode = 0
+offset_left = 371.0
+offset_top = 415.0
+offset_right = 491.0
+offset_bottom = 535.0
+
+[node name="Document" parent="Desktop/Folder/Window/PanelContainer" index="0" instance=ExtResource("4_7hnyc")]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 120.0
 
 [node name="MenuBar" parent="." instance=ExtResource("9_jb3nm")]
 unique_name_in_owner = true
@@ -126,4 +138,5 @@ bus = &"Music"
 [connection signal="canceled" from="EmptyTrashDialog" to="." method="_cancel_empty_trash"]
 [connection signal="confirmed" from="EmptyTrashDialog" to="." method="_confirm_empty_trash"]
 
+[editable path="Desktop/Folder"]
 [editable path="EmptyTrashDialog"]
