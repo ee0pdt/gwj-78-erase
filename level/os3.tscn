@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c2ny0ej7ina0g"]
+[gd_scene load_steps=21 format=3 uid="uid://c2ny0ej7ina0g"]
 
 [ext_resource type="Theme" uid="uid://dj2vfsx2jdmu0" path="res://themes/os3.tres" id="1_tptyl"]
 [ext_resource type="Script" uid="uid://dffmsepw35cgc" path="res://level/level.gd" id="2_abgi6"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://30qghlfcc1sv" path="res://fsm/state_machine.gd" id="8_ab8w2"]
 [ext_resource type="Script" uid="uid://0mcjqa8ciue7" path="res://level/states/asleep.gd" id="9_6jmfi"]
 [ext_resource type="Texture2D" uid="uid://cjast7ach5qcn" path="res://assets/images/video-camera-technology.svg" id="9_ab8w2"]
+[ext_resource type="PackedScene" uid="uid://dthypb60ncs4k" path="res://file_system_items/downgrader/downgrader.tscn" id="12_6jmfi"]
 [ext_resource type="PackedScene" uid="uid://cwrx8tafveswp" path="res://install_window/install_window.tscn" id="14_a4knm"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aen5n"]
@@ -68,7 +69,7 @@ offset_left = 328.0
 offset_top = 241.0
 offset_right = 456.0
 offset_bottom = 369.0
-text = "Install VM"
+text = "Installer"
 file_size = 1.5
 
 [node name="MenuBackground" type="Panel" parent="Desktop"]
@@ -130,7 +131,9 @@ offset_bottom = 244.0
 text = "Read Me"
 file_contents = "[center]Instructions[/center]
 
-Before you can play you need to install a VM. Run the installer and follow the instructions."
+Before you can install the game you need to downgrade your OS to an older version. Run the Downgrader app and follow the instructions.
+
+Once the downgrade is complete you will be able to run the Installer"
 file_size = 0.01
 
 [node name="LanguageFiles" parent="Desktop" instance=ExtResource("4_fjy5s")]
@@ -215,6 +218,16 @@ layout_mode = 0
 offset_right = 160.0
 offset_bottom = 42.0
 
+[node name="Installer2" parent="Desktop" instance=ExtResource("12_6jmfi")]
+layout_mode = 0
+offset_left = 521.0
+offset_top = 125.0
+offset_right = 641.0
+offset_bottom = 245.0
+text = "Downgrader"
+file_size = 1.2
+system_file = true
+
 [node name="InfoWindow" parent="." instance=ExtResource("6_a4knm")]
 unique_name_in_owner = true
 title = "Info"
@@ -248,6 +261,10 @@ bus = &"SFX"
 [node name="InstallWindow" parent="." instance=ExtResource("14_a4knm")]
 unique_name_in_owner = true
 visible = false
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+bus = &"Music"
 
 [connection signal="gui_input" from="Desktop" to="Desktop" method="_on_gui_input"]
 [connection signal="close_requested" from="InfoWindow" to="." method="_handle_close_info"]

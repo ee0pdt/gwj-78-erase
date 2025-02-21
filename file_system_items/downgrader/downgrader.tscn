@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dthypb60ncs4k"]
+
+[ext_resource type="Texture2D" uid="uid://d2d735ao0w1je" path="res://assets/images/mac_plus.jpeg" id="1_vw7q2"]
+[ext_resource type="Script" uid="uid://dnq6bg2gvclq3" path="res://file_system_items/installer/installer.gd" id="2_rg6u0"]
+[ext_resource type="PackedScene" uid="uid://7aid857rtjr5" path="res://file_system_items/file_system_item/file_system_item_state_machine.tscn" id="3_n3w3u"]
+
+[node name="Installer" type="Button"]
+offset_right = 80.0
+offset_bottom = 80.0
+text = "Install"
+icon = ExtResource("1_vw7q2")
+flat = true
+autowrap_mode = 1
+icon_alignment = 1
+vertical_icon_alignment = 2
+expand_icon = true
+script = ExtResource("2_rg6u0")
+
+[node name="StateMachine" parent="." instance=ExtResource("3_n3w3u")]
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

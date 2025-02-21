@@ -3,15 +3,15 @@ class_name Level
 
 
 @export var hard_drive_capacity := 10.0
+@export var required_space_for_downgrade := 5.0
 @export var required_space_for_install := 5.0
-
 
 var currently_selected_item: FileSystemItem = null
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	%Music.play()
 
 
 func _request_empty_trash() -> void:
@@ -86,6 +86,18 @@ func _handle_attempt_install() -> void:
 
 func _handle_close_installer() -> void:
 	%InstallWindow.hide()
+	
+
+func _handle_attempt_downgrade() -> void:
+	var space_available = hard_drive_capacity - _calc_storage_usage()
+	
+	if space_available >= required_space_for_downgrade:
+		%InstallWindow.set_info("Downgrade commencing...")
+	else:
+		var info = str("Not enough room to expand downgrader. You need ", required_space_for_downgrade - space_available, "GB more. Try deleting some files.")
+		%InstallWindow.set_info(info)
+	
+	%InstallWindow.show()
 
 
 func _calc_storage_usage() -> float:
