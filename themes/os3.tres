@@ -1,16 +1,69 @@
-[gd_resource type="Theme" load_steps=13 format=3 uid="uid://dj2vfsx2jdmu0"]
+[gd_resource type="Theme" load_steps=17 format=3 uid="uid://dj2vfsx2jdmu0"]
 
 [ext_resource type="FontFile" uid="uid://c6l5hxqkb8oyp" path="res://assets/fonts/calibre-font-family-1740059804-0/TestCalibre-Regular-BF661746edbee52.otf" id="1_v40bh"]
 [ext_resource type="StyleBox" uid="uid://bbw4idcb3ejpp" path="res://themes/os1_mono.button_hover.stylebox" id="2_ndsb5"]
-[ext_resource type="StyleBox" uid="uid://dbme13r5qnk6w" path="res://themes/os1_mono_button_normal.stylebox" id="3_6tcwe"]
 [ext_resource type="FontFile" uid="uid://didgilb12w1ij" path="res://assets/fonts/ChiKareGo.ttf" id="4_87cn0"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8p1la"]
+bg_color = Color(0.164706, 0.164706, 0.164706, 0.756863)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8, 0.8, 0.8, 0.368627)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 20.0
+expand_margin_top = 40.0
+expand_margin_right = 20.0
+expand_margin_bottom = 20.0
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o5ks6"]
-content_margin_left = 8.0
-content_margin_top = 8.0
-content_margin_right = 8.0
-content_margin_bottom = 8.0
-bg_color = Color(1, 1, 1, 1)
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+bg_color = Color(0.921569, 0.921569, 0.921569, 0.329412)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_24pj0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_87cn0"]
+content_margin_left = 15.0
+content_margin_top = 4.0
+content_margin_right = 15.0
+content_margin_bottom = 4.0
+bg_color = Color(0.791016, 0.791016, 0.791016, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.376471, 0.376471, 0.376471, 0.843137)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6tcwe"]
+content_margin_left = 15.0
+content_margin_top = 4.0
+content_margin_right = 15.0
+content_margin_bottom = 4.0
+bg_color = Color(0.912109, 0.912109, 0.912109, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.376471, 0.376471, 0.376471, 0.298039)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v40bh"]
 content_margin_left = 10.0
@@ -69,22 +122,40 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_24pj0"]
+bg_color = Color(0.164706, 0.164706, 0.164706, 0.756863)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8, 0.8, 0.8, 0.368627)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 20.0
+expand_margin_top = 40.0
+expand_margin_right = 20.0
+expand_margin_bottom = 20.0
+
 [resource]
 default_font = ExtResource("1_v40bh")
 default_font_size = 28
+AcceptDialog/styles/embedded_border = SubResource("StyleBoxFlat_8p1la")
 AcceptDialog/styles/panel = SubResource("StyleBoxFlat_o5ks6")
 Button/colors/font_color = Color(0, 0, 0, 1)
 Button/colors/font_disabled_color = Color(0, 0, 0, 1)
 Button/colors/font_focus_color = Color(0, 0, 0, 1)
 Button/colors/font_hover_color = Color(1, 1, 1, 1)
 Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
 Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/constants/outline_size = 3
 Button/fonts/font = ExtResource("1_v40bh")
 Button/styles/disabled = null
-Button/styles/focus = null
-Button/styles/hover = ExtResource("2_ndsb5")
-Button/styles/normal = ExtResource("3_6tcwe")
-Button/styles/pressed = null
+Button/styles/focus = SubResource("StyleBoxEmpty_24pj0")
+Button/styles/hover = SubResource("StyleBoxFlat_87cn0")
+Button/styles/normal = SubResource("StyleBoxFlat_6tcwe")
 Label/colors/font_color = Color(0, 0, 0, 1)
 Label/font_sizes/font_size = 28
 Label/fonts/font = ExtResource("1_v40bh")
@@ -123,3 +194,4 @@ RichTextLabel/fonts/mono_font = ExtResource("4_87cn0")
 RichTextLabel/fonts/normal_font = ExtResource("4_87cn0")
 Window/font_sizes/title_font_size = 28
 Window/fonts/title_font = ExtResource("1_v40bh")
+Window/styles/embedded_border = SubResource("StyleBoxFlat_24pj0")

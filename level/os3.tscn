@@ -51,6 +51,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_tptyl")
@@ -98,9 +100,9 @@ offset_bottom = 338.0
 
 [node name="Document" parent="Desktop" instance=ExtResource("4_fjy5s")]
 layout_mode = 0
-offset_left = 756.0
+offset_left = 757.0
 offset_top = 275.0
-offset_right = 884.0
+offset_right = 885.0
 offset_bottom = 395.0
 
 [node name="MenuBar" parent="Desktop" instance=ExtResource("6_aen5n")]
@@ -121,6 +123,8 @@ content_scale_aspect = 1
 
 [node name="EmptyTrashDialog" parent="." instance=ExtResource("7_t67gl")]
 unique_name_in_owner = true
+size = Vector2i(462, 200)
+visible = true
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("8_ab8w2")
