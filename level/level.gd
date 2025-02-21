@@ -62,3 +62,4 @@ func _handle_files_deleted_from_trash(files: Array[FileSystemItem]):
 
 func _handle_file_added_to_trash(file: FileSystemItem):
 	%MenuBar.enable_empty_trash()
+	%SoundItemAddedToTrash.play()
