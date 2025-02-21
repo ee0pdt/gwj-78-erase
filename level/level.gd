@@ -96,6 +96,7 @@ func _handle_attempt_downgrade() -> void:
 	
 	if space_available >= required_space_for_downgrade:
 		%InstallWindow.set_info("Downgrade commencing...")
+		get_tree().change_scene_to_file("res://level/os1.tscn")
 	else:
 		var info = str("Not enough room to expand downgrader. You need ", required_space_for_downgrade - space_available, "GB more. Try deleting some files.")
 		%InstallWindow.set_info(info)

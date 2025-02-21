@@ -119,6 +119,10 @@ bus = &"SFX"
 unique_name_in_owner = true
 bus = &"SFX"
 
+[node name="Music" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+bus = &"Music"
+
 [connection signal="gui_input" from="Desktop" to="Desktop" method="_on_gui_input"]
 [connection signal="close_requested" from="InfoWindow" to="." method="_handle_close_info"]
 [connection signal="canceled" from="EmptyTrashDialog" to="." method="_cancel_empty_trash"]
