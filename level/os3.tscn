@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://c2ny0ej7ina0g"]
+[gd_scene load_steps=32 format=3 uid="uid://c2ny0ej7ina0g"]
 
 [ext_resource type="Theme" uid="uid://dj2vfsx2jdmu0" path="res://themes/os3.tres" id="1_tptyl"]
 [ext_resource type="Script" uid="uid://dffmsepw35cgc" path="res://level/level.gd" id="2_abgi6"]
@@ -16,7 +16,10 @@
 [ext_resource type="Script" uid="uid://0mcjqa8ciue7" path="res://level/states/asleep.gd" id="9_6jmfi"]
 [ext_resource type="Texture2D" uid="uid://cjast7ach5qcn" path="res://assets/images/video-camera-technology.svg" id="9_ab8w2"]
 [ext_resource type="PackedScene" uid="uid://dthypb60ncs4k" path="res://file_system_items/downgrader/downgrader.tscn" id="12_6jmfi"]
+[ext_resource type="Texture2D" uid="uid://bpa87pe2vyeov" path="res://assets/images/Downgrader@1x.png" id="13_vf410"]
+[ext_resource type="PackedScene" uid="uid://byxkbllcqjjr3" path="res://file_system_items/folder/folder.tscn" id="14_07nky"]
 [ext_resource type="PackedScene" uid="uid://cwrx8tafveswp" path="res://install_window/install_window.tscn" id="14_a4knm"]
+[ext_resource type="Texture2D" uid="uid://bfqj78u42ab5s" path="res://assets/images/Installer@1x.png" id="15_n4dsa"]
 [ext_resource type="AudioStream" uid="uid://dbwjphmrgajy7" path="res://assets/audio/sfx/sfx_emptyTrash_hifi.wav" id="17_xvixd"]
 [ext_resource type="AudioStream" uid="uid://duw4vj2ewo514" path="res://assets/audio/sfx/sfx_throwaway_hifi.wav" id="18_kquc8"]
 [ext_resource type="AudioStream" uid="uid://bpk1ogos1hdri" path="res://assets/audio/music/music_hifi_loop.ogg" id="18_n8232"]
@@ -77,15 +80,6 @@ theme = ExtResource("1_tptyl")
 theme_override_styles/panel = SubResource("StyleBoxTexture_aen5n")
 script = ExtResource("3_abgi6")
 
-[node name="Installer" parent="Desktop" instance=ExtResource("5_t67gl")]
-layout_mode = 0
-offset_left = 328.0
-offset_top = 241.0
-offset_right = 456.0
-offset_bottom = 369.0
-text = "Installer"
-file_size = 1.5
-
 [node name="MenuBackground" type="Panel" parent="Desktop"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
@@ -136,39 +130,207 @@ text = "VideoChat"
 icon = ExtResource("9_ab8w2")
 file_size = 2.5
 
-[node name="ReadMe" parent="Desktop" instance=ExtResource("4_fjy5s")]
-layout_mode = 0
-offset_left = 325.0
-offset_top = 124.0
-offset_right = 453.0
-offset_bottom = 244.0
-text = "Read Me"
-file_size = 0.01
-
-[node name="LanguageFiles" parent="Desktop" instance=ExtResource("4_fjy5s")]
-layout_mode = 0
-offset_left = 898.0
-offset_top = 227.0
-offset_right = 1026.0
-offset_bottom = 347.0
-text = "Language Files"
-file_size = 0.01
-
 [node name="MenuBar" parent="Desktop" instance=ExtResource("6_aen5n")]
 unique_name_in_owner = true
 layout_mode = 0
 offset_right = 160.0
 offset_bottom = 42.0
 
-[node name="Installer2" parent="Desktop" instance=ExtResource("12_6jmfi")]
+[node name="MisfileCrisisFolder" parent="Desktop" instance=ExtResource("14_07nky")]
 layout_mode = 0
-offset_left = 521.0
-offset_top = 125.0
-offset_right = 641.0
-offset_bottom = 245.0
+offset_left = 422.0
+offset_top = 211.0
+offset_right = 550.0
+offset_bottom = 339.0
+text = "Misfile Crisis"
+
+[node name="ReadMe" parent="Desktop/MisfileCrisisFolder/Window/PanelContainer" index="0" instance=ExtResource("4_fjy5s")]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 9.0
+offset_right = 287.0
+offset_bottom = 129.0
+text = "Read Me"
+file_contents = "[center]Instructions[/center]
+
+Before you can install Misfile Crisis you need to downgrade your OS.
+
+Run the Downgrader and follow the instructions.
+
+Then run the Installer."
+file_size = 0.01
+
+[node name="DownGrader" parent="Desktop/MisfileCrisisFolder/Window/PanelContainer" index="1" instance=ExtResource("12_6jmfi")]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 140.0
+offset_right = 126.0
+offset_bottom = 260.0
 text = "Downgrader"
+icon = ExtResource("13_vf410")
+autowrap_mode = 3
 file_size = 1.2
 system_file = true
+
+[node name="Installer" parent="Desktop/MisfileCrisisFolder/Window/PanelContainer" index="2" instance=ExtResource("5_t67gl")]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+text = "Install Misfile Crisis"
+icon = ExtResource("15_n4dsa")
+autowrap_mode = 2
+file_size = 1.5
+
+[node name="SystemFolder" parent="Desktop" instance=ExtResource("14_07nky")]
+layout_mode = 0
+offset_left = 1112.0
+offset_top = 85.0
+offset_right = 1240.0
+offset_bottom = 213.0
+text = "System Folder"
+system_file = true
+
+[node name="LanguageFiles" parent="Desktop/SystemFolder/Window/PanelContainer" index="0" instance=ExtResource("4_fjy5s")]
+layout_mode = 0
+offset_bottom = 120.0
+text = "Language Files"
+file_contents = "Afrikaans	af
+Albanian	sq
+Arabic (Algeria)	ar-dz
+Arabic (Bahrain)	ar-bh
+Arabic (Egypt)	ar-eg
+Arabic (Iraq)	ar-iq
+Arabic (Jordan)	ar-jo
+Arabic (Kuwait)	ar-kw
+Arabic (Lebanon)	ar-lb
+Arabic (Libya)	ar-ly
+Arabic (Morocco)	ar-ma
+Arabic (Oman)	ar-om
+Arabic (Qatar)	ar-qa
+Arabic (Saudi Arabia)	ar-sa
+Arabic (Syria)	ar-sy
+Arabic (Tunisia)	ar-tn
+Arabic (U.A.E.)	ar-ae
+Arabic (Yemen)	ar-ye
+Basque	eu
+Belarusian	be
+Bulgarian	bg
+Catalan	ca
+Chinese (Hong Kong)	zh-hk
+Chinese (PRC)	zh-cn
+Chinese (Singapore)	zh-sg
+Chinese (Taiwan)	zh-tw
+Croatian	hr
+Czech	cs
+Danish	da
+Dutch (Belgium)	nl-be
+Dutch (Standard)	nl
+English	en
+English (Australia)	en-au
+English (Belize)	en-bz
+English (Canada)	en-ca
+English (Ireland)	en-ie
+English (Jamaica)	en-jm
+English (New Zealand)	en-nz
+English (South Africa)	en-za
+English (Trinidad)	en-tt
+English (United Kingdom)	en-gb
+English (United States)	en-us
+Estonian	et
+Faeroese	fo
+Farsi	fa
+Finnish	fi
+French (Belgium)	fr-be
+French (Canada)	fr-ca
+French (Luxembourg)	fr-lu
+French (Standard)	fr
+French (Switzerland)	fr-ch
+Gaelic (Scotland)	gd
+German (Austria)	de-at
+German (Liechtenstein)	de-li
+German (Luxembourg)	de-lu
+German (Standard)	de
+German (Switzerland)	de-ch
+Greek	el
+Hebrew	he
+Hindi	hi
+Hungarian	hu
+Icelandic	is
+Indonesian	id
+Irish	ga
+Italian (Standard)	it
+Italian (Switzerland)	it-ch
+Japanese	ja
+Korean	ko
+Korean (Johab)	ko
+Kurdish	ku
+Latvian	lv
+Lithuanian	lt
+Macedonian (FYROM)	mk
+Malayalam	ml
+Malaysian	ms
+Maltese	mt
+Norwegian	no
+Norwegian (Bokmål)	nb
+Norwegian (Nynorsk)	nn
+Polish	pl
+Portuguese (Brazil)	pt-br
+Portuguese (Portugal)	pt
+Punjabi	pa
+Rhaeto-Romanic	rm
+Romanian	ro
+Romanian (Republic of Moldova)	ro-md
+Russian	ru
+Russian (Republic of Moldova)	ru-md
+Serbian	sr
+Slovak	sk
+Slovenian	sl
+Sorbian	sb
+Spanish (Argentina)	es-ar
+Spanish (Bolivia)	es-bo
+Spanish (Chile)	es-cl
+Spanish (Colombia)	es-co
+Spanish (Costa Rica)	es-cr
+Spanish (Dominican Republic)	es-do
+Spanish (Ecuador)	es-ec
+Spanish (El Salvador)	es-sv
+Spanish (Guatemala)	es-gt
+Spanish (Honduras)	es-hn
+Spanish (Mexico)	es-mx
+Spanish (Nicaragua)	es-ni
+Spanish (Panama)	es-pa
+Spanish (Paraguay)	es-py
+Spanish (Peru)	es-pe
+Spanish (Puerto Rico)	es-pr
+Spanish (Spain)	es
+Spanish (Uruguay)	es-uy
+Spanish (Venezuela)	es-ve
+Swedish	sv
+Swedish (Finland)	sv-fi
+Thai	th
+Tsonga	ts
+Tswana	tn
+Turkish	tr
+Ukrainian	uk
+Urdu	ur
+Venda	ve
+Vietnamese	vi
+Welsh	cy
+Xhosa	xh
+Yiddish	ji
+Zulu	zu"
+file_size = 0.01
+
+[node name="PrinterDrivers" parent="Desktop/SystemFolder/Window/PanelContainer" index="1" instance=ExtResource("4_fjy5s")]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 2.0
+offset_right = 245.0
+offset_bottom = 122.0
+text = "Printer Drivers"
+file_contents = "Printer Drivers
+"
+file_size = 1.2
 
 [node name="InfoWindow" parent="." instance=ExtResource("6_a4knm")]
 unique_name_in_owner = true
@@ -222,4 +384,6 @@ bus = &"SFX"
 [connection signal="confirmed" from="EmptyTrashDialog" to="." method="_confirm_empty_trash"]
 [connection signal="close_requested" from="InstallWindow" to="." method="_handle_close_installer"]
 
+[editable path="Desktop/MisfileCrisisFolder"]
+[editable path="Desktop/SystemFolder"]
 [editable path="EmptyTrashDialog"]

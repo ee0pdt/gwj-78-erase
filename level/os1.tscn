@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bfhe57ypw3i5u"]
+[gd_scene load_steps=27 format=3 uid="uid://bfhe57ypw3i5u"]
 
 [ext_resource type="Theme" uid="uid://cmnrvs380oc6u" path="res://themes/os1_mono.tres" id="1_1b1c6"]
 [ext_resource type="Script" uid="uid://dffmsepw35cgc" path="res://level/level.gd" id="2_1d7e5"]
@@ -9,10 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://dmf3a1es3sgi4" path="res://file_system_items/application/application.tscn" id="5_euys8"]
 [ext_resource type="PackedScene" uid="uid://dpf8vobr127ok" path="res://info_window/info_window.tscn" id="6_1b1c6"]
 [ext_resource type="PackedScene" uid="uid://wyj22wjeccw6" path="res://empty_trash_dialog/empty_trash_dialog.tscn" id="7_0vag3"]
+[ext_resource type="Texture2D" uid="uid://dtr4u0h4ytgqk" path="res://assets/images/DocumentOS1@0.25x.png" id="7_2cq1c"]
 [ext_resource type="PackedScene" uid="uid://byxkbllcqjjr3" path="res://file_system_items/folder/folder.tscn" id="8_euys8"]
 [ext_resource type="Script" uid="uid://30qghlfcc1sv" path="res://fsm/state_machine.gd" id="8_k2s33"]
+[ext_resource type="Texture2D" uid="uid://dwnqrplu0wwo8" path="res://assets/images/FolderOS1@0.25x.png" id="9_3bxrh"]
 [ext_resource type="Script" uid="uid://0mcjqa8ciue7" path="res://level/states/asleep.gd" id="9_8yfpd"]
 [ext_resource type="PackedScene" uid="uid://jr15xa6g2paw" path="res://menu_bar/menu_bar.tscn" id="9_jb3nm"]
+[ext_resource type="Texture2D" uid="uid://cv6u3jwv8aapl" path="res://assets/images/GodotOS1@0.25x.png" id="9_nl656"]
 [ext_resource type="AudioStream" uid="uid://pvya3ndgshk5" path="res://assets/audio/music/music_lofi_loop.ogg" id="14_1b1c6"]
 [ext_resource type="AudioStream" uid="uid://dy6lng8qxlkt7" path="res://assets/audio/sfx/sfx_emptyTrash_lofi.wav" id="14_ksk6k"]
 [ext_resource type="AudioStream" uid="uid://caesi6x3j5l2" path="res://assets/audio/sfx/sfx_throwaway_lofi.wav" id="15_3bxrh"]
@@ -81,6 +84,7 @@ offset_right = 1277.0
 offset_bottom = 706.0
 grow_horizontal = 0
 grow_vertical = 2
+hover_icon_file = "uid://feithyqiyd3"
 screen = NodePath("")
 
 [node name="Document" parent="Desktop" instance=ExtResource("4_7hnyc")]
@@ -89,6 +93,7 @@ offset_left = 694.0
 offset_top = 169.0
 offset_right = 822.0
 offset_bottom = 297.0
+icon = ExtResource("7_2cq1c")
 infected = true
 
 [node name="Application" parent="Desktop" instance=ExtResource("5_euys8")]
@@ -97,13 +102,17 @@ offset_left = 985.0
 offset_top = 121.0
 offset_right = 1113.0
 offset_bottom = 249.0
+icon = ExtResource("9_nl656")
+vertical_icon_alignment = 0
 
 [node name="Folder" parent="Desktop" instance=ExtResource("8_euys8")]
 layout_mode = 0
-offset_left = 371.0
-offset_top = 415.0
-offset_right = 491.0
-offset_bottom = 535.0
+offset_left = 335.0
+offset_top = 180.0
+offset_right = 463.0
+offset_bottom = 300.0
+text = "Misfire Crisis"
+icon = ExtResource("9_3bxrh")
 
 [node name="Document" parent="Desktop/Folder/Window/PanelContainer" index="0" instance=ExtResource("4_7hnyc")]
 layout_mode = 0

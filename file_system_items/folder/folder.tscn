@@ -1,18 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://byxkbllcqjjr3"]
 
-[ext_resource type="Texture2D" uid="uid://bm4gjghrn4dle" path="res://assets/images/folder.png" id="1_1lged"]
+[ext_resource type="Texture2D" uid="uid://dif7ebeblbom3" path="res://assets/images/Folder@1x.png" id="1_1lged"]
 [ext_resource type="Script" uid="uid://ljkq2bkxrxdy" path="res://file_system_items/folder/folder.gd" id="2_1lged"]
 [ext_resource type="PackedScene" uid="uid://7aid857rtjr5" path="res://file_system_items/file_system_item/file_system_item_state_machine.tscn" id="3_04nrn"]
 
 [node name="Folder" type="Button"]
-offset_right = 89.0
-offset_bottom = 80.0
+offset_right = 128.0
+offset_bottom = 128.0
 text = "Folder"
 icon = ExtResource("1_1lged")
 flat = true
 autowrap_mode = 3
 icon_alignment = 1
-vertical_icon_alignment = 2
+vertical_icon_alignment = 0
 expand_icon = true
 script = ExtResource("2_1lged")
 
