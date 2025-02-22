@@ -4,6 +4,7 @@ signal restart
 
 # Installation Events
 signal attempt_install  # Installation window triggers this
+signal install
 signal attempt_downgrade
 signal downgrade
 

@@ -84,6 +84,7 @@ func _handle_attempt_install() -> void:
 		%InstallWindow.set_info("This installer is not compatible with your OS. Please downgrade first.")
 	elif space_available >= required_space_for_install:
 		%InstallWindow.set_info("Installation commencing...")
+		GameEvents.install.emit()
 	else:
 		var info = str("Not enough room to install. You need ", required_space_for_install - space_available, unit, " more. Try deleting some files.")
 		%InstallWindow.set_info(info)

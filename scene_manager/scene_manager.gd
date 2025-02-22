@@ -17,7 +17,14 @@ func _ready() -> void:
 	%OS3.show()
 	GameEvents.downgrade.connect(self._handle_downgrade)
 	GameEvents.restart.connect(self._handle_restart)
+	GameEvents.install.connect(self._handle_install)
 	current_scene = %OS3
+
+
+func _handle_install() -> void:
+	await get_tree().create_timer(2.0).timeout
+	%Victory.show()
+	current_scene.queue_free()
 
 
 func _handle_restart() -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dcyntpl7fhnhh"]
+[gd_scene load_steps=12 format=3 uid="uid://dcyntpl7fhnhh"]
 
 [ext_resource type="PackedScene" uid="uid://c2ny0ej7ina0g" path="res://level/os3.tscn" id="1_6w36t"]
 [ext_resource type="Script" uid="uid://d2gi4f4gegll1" path="res://scene_manager/scene_manager.gd" id="1_ms3da"]
@@ -7,9 +7,16 @@
 [ext_resource type="AudioStream" uid="uid://c6v82ve0s2pch" path="res://assets/audio/sfx/sfx_startup_hifi.wav" id="5_5du7x"]
 [ext_resource type="Texture2D" uid="uid://cl68s7gfimstn" path="res://assets/images/a3k5lpwsn4gm7en71aa.png" id="6_n64yn"]
 [ext_resource type="Theme" uid="uid://cmnrvs380oc6u" path="res://themes/os1_mono.tres" id="7_4al60"]
+[ext_resource type="Texture2D" uid="uid://cv6u3jwv8aapl" path="res://assets/images/GodotOS1@0.25x.png" id="8_jodkt"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4al60"]
 texture = ExtResource("6_n64yn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jodkt"]
+texture = ExtResource("6_n64yn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mlxu3"]
+texture = ExtResource("8_jodkt")
 
 [node name="SceneManager" type="Control"]
 layout_mode = 3
@@ -87,3 +94,29 @@ size_flags_vertical = 4
 theme = ExtResource("7_4al60")
 indeterminate = true
 editor_preview_indeterminate = false
+
+[node name="Victory" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Victory"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_jodkt")
+
+[node name="Panel" type="Panel" parent="Victory/PanelContainer"]
+custom_minimum_size = Vector2(640, 480)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_mlxu3")
