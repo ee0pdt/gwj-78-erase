@@ -82,7 +82,8 @@ func _handle_attempt_install() -> void:
 	elif space_available >= required_space_for_install:
 		%InstallWindow.set_info("Installation commencing...")
 	else:
-		var info = str("Not enough room to install. You need ", required_space_for_install - space_available, "GB more. Try deleting some files.")
+		var unit = "GB" if os_version == 3.0 else "MB"
+		var info = str("Not enough room to install. You need ", required_space_for_install - space_available, unit, " more. Try deleting some files.")
 		%InstallWindow.set_info(info)
 	
 	%InstallWindow.show()

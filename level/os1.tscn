@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bfhe57ypw3i5u"]
+[gd_scene load_steps=31 format=3 uid="uid://bfhe57ypw3i5u"]
 
 [ext_resource type="Theme" uid="uid://cmnrvs380oc6u" path="res://themes/os1_mono.tres" id="1_1b1c6"]
 [ext_resource type="Script" uid="uid://dffmsepw35cgc" path="res://level/level.gd" id="2_1d7e5"]
@@ -16,6 +16,8 @@
 [ext_resource type="Script" uid="uid://0mcjqa8ciue7" path="res://level/states/asleep.gd" id="9_8yfpd"]
 [ext_resource type="PackedScene" uid="uid://jr15xa6g2paw" path="res://menu_bar/menu_bar.tscn" id="9_jb3nm"]
 [ext_resource type="Texture2D" uid="uid://cv6u3jwv8aapl" path="res://assets/images/GodotOS1@0.25x.png" id="9_nl656"]
+[ext_resource type="PackedScene" uid="uid://b27g4gvam75qu" path="res://file_system_items/installer/installer.tscn" id="12_k80li"]
+[ext_resource type="Texture2D" uid="uid://b7a1lsvohedn6" path="res://assets/images/InstallerOS1@0.25x.png" id="13_f1j2c"]
 [ext_resource type="AudioStream" uid="uid://pvya3ndgshk5" path="res://assets/audio/music/music_lofi_loop.ogg" id="14_1b1c6"]
 [ext_resource type="AudioStream" uid="uid://dy6lng8qxlkt7" path="res://assets/audio/sfx/sfx_emptyTrash_lofi.wav" id="14_ksk6k"]
 [ext_resource type="AudioStream" uid="uid://caesi6x3j5l2" path="res://assets/audio/sfx/sfx_throwaway_lofi.wav" id="15_3bxrh"]
@@ -24,6 +26,7 @@
 [ext_resource type="AudioStream" uid="uid://c1ah206sschrc" path="res://assets/audio/sfx/click/sfx_click2.wav" id="18_nl656"]
 [ext_resource type="AudioStream" uid="uid://duglvfwhnr7qp" path="res://assets/audio/sfx/click/sfx_click3.wav" id="19_aerqq"]
 [ext_resource type="AudioStream" uid="uid://wnfgdkip3462" path="res://assets/audio/sfx/click/sfx_click4.wav" id="20_k80li"]
+[ext_resource type="PackedScene" uid="uid://cwrx8tafveswp" path="res://install_window/install_window.tscn" id="27_j6sx4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k2s33"]
 texture = ExtResource("4_euys8")
@@ -49,6 +52,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_1b1c6")
 script = ExtResource("2_1d7e5")
+os_version = 1.0
 metadata/_edit_horizontal_guides_ = [191.0]
 
 [node name="Desktop" type="Panel" parent="."]
@@ -106,34 +110,36 @@ offset_bottom = 249.0
 icon = ExtResource("9_nl656")
 vertical_icon_alignment = 0
 
-[node name="Folder" parent="Desktop" instance=ExtResource("8_euys8")]
+[node name="MisfileCrisisFolder" parent="Desktop" instance=ExtResource("8_euys8")]
 layout_mode = 0
 offset_left = 335.0
 offset_top = 180.0
 offset_right = 463.0
 offset_bottom = 300.0
-text = "Misfire Crisis"
+text = "Misfile Crisis"
 icon = ExtResource("9_3bxrh")
 
-[node name="Document" parent="Desktop/Folder/Window/PanelContainer" index="0" instance=ExtResource("4_7hnyc")]
+[node name="Window" parent="Desktop/MisfileCrisisFolder" index="1"]
+visible = true
+
+[node name="ReadMe" parent="Desktop/MisfileCrisisFolder/Window/PanelContainer" index="0" instance=ExtResource("4_7hnyc")]
 layout_mode = 0
 offset_right = 120.0
 offset_bottom = 120.0
+text = "Read Me"
+icon = ExtResource("7_2cq1c")
+file_contents = "Run the Installer"
 
-[node name="Folder2" parent="Desktop/Folder/Window/PanelContainer" index="1" instance=ExtResource("8_euys8")]
+[node name="Installer" parent="Desktop/MisfileCrisisFolder/Window/PanelContainer" index="1" instance=ExtResource("12_k80li")]
 layout_mode = 0
-offset_left = 138.0
-offset_top = 1.0
-offset_right = 258.0
-offset_bottom = 121.0
-
-[node name="Window" parent="Desktop/Folder/Window/PanelContainer/Folder2" index="1"]
-auto_translate_mode = 1
-
-[node name="Document" parent="Desktop/Folder/Window/PanelContainer/Folder2/Window/PanelContainer" index="0" instance=ExtResource("4_7hnyc")]
-layout_mode = 0
-offset_right = 120.0
-offset_bottom = 120.0
+offset_left = 152.0
+offset_top = 14.0
+offset_right = 280.0
+offset_bottom = 174.0
+text = "Install Misfile Crisis"
+icon = ExtResource("13_f1j2c")
+autowrap_mode = 2
+vertical_icon_alignment = 0
 
 [node name="MenuBar" parent="." instance=ExtResource("9_jb3nm")]
 unique_name_in_owner = true
@@ -185,11 +191,15 @@ bus = &"Music"
 stream = SubResource("AudioStreamRandomizer_f1j2c")
 bus = &"SFX"
 
+[node name="InstallWindow" parent="." instance=ExtResource("27_j6sx4")]
+unique_name_in_owner = true
+visible = false
+
 [connection signal="gui_input" from="Desktop" to="Desktop" method="_on_gui_input"]
 [connection signal="close_requested" from="InfoWindow" to="." method="_handle_close_info"]
 [connection signal="canceled" from="EmptyTrashDialog" to="." method="_cancel_empty_trash"]
 [connection signal="confirmed" from="EmptyTrashDialog" to="." method="_confirm_empty_trash"]
+[connection signal="close_requested" from="InstallWindow" to="." method="_handle_close_installer"]
 
-[editable path="Desktop/Folder"]
-[editable path="Desktop/Folder/Window/PanelContainer/Folder2"]
+[editable path="Desktop/MisfileCrisisFolder"]
 [editable path="EmptyTrashDialog"]
