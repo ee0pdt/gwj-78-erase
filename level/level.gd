@@ -15,7 +15,7 @@ var unit: String
 
 func _ready() -> void:
 	unit = "GB" if os_version == 3.0 else "MB"
-	%SoundStartup.play()
+	#%SoundStartup.play()
 
 
 func _request_empty_trash() -> void:

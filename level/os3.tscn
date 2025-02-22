@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://c2ny0ej7ina0g"]
+[gd_scene load_steps=32 format=3 uid="uid://c2ny0ej7ina0g"]
 
 [ext_resource type="Theme" uid="uid://dj2vfsx2jdmu0" path="res://themes/os3.tres" id="1_tptyl"]
 [ext_resource type="Script" uid="uid://dffmsepw35cgc" path="res://level/level.gd" id="2_abgi6"]
@@ -22,13 +22,11 @@
 [ext_resource type="Texture2D" uid="uid://bfqj78u42ab5s" path="res://assets/images/Installer@1x.png" id="15_n4dsa"]
 [ext_resource type="AudioStream" uid="uid://dbwjphmrgajy7" path="res://assets/audio/sfx/sfx_emptyTrash_hifi.wav" id="17_xvixd"]
 [ext_resource type="AudioStream" uid="uid://duw4vj2ewo514" path="res://assets/audio/sfx/sfx_throwaway_hifi.wav" id="18_kquc8"]
-[ext_resource type="AudioStream" uid="uid://bpk1ogos1hdri" path="res://assets/audio/music/music_hifi_loop.ogg" id="18_n8232"]
 [ext_resource type="Script" uid="uid://d0o3k2nmyevkt" path="res://level/states/transition.gd" id="20_n4dsa"]
 [ext_resource type="AudioStream" uid="uid://cfseyacgyg6np" path="res://assets/audio/sfx/click/sfx_click1.wav" id="21_lc5mr"]
 [ext_resource type="AudioStream" uid="uid://c1ah206sschrc" path="res://assets/audio/sfx/click/sfx_click2.wav" id="22_7ikqj"]
 [ext_resource type="AudioStream" uid="uid://duglvfwhnr7qp" path="res://assets/audio/sfx/click/sfx_click3.wav" id="23_07nky"]
 [ext_resource type="AudioStream" uid="uid://wnfgdkip3462" path="res://assets/audio/sfx/click/sfx_click4.wav" id="24_vf410"]
-[ext_resource type="AudioStream" uid="uid://c6v82ve0s2pch" path="res://assets/audio/sfx/sfx_startup_hifi.wav" id="29_etycn"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aen5n"]
 texture = ExtResource("4_abgi6")
@@ -379,6 +377,7 @@ visible = false
 unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(250, 50)
+layout_mode = 0
 offset_left = 14.0
 offset_top = 89.0
 offset_right = 264.0
@@ -386,19 +385,8 @@ offset_bottom = 139.0
 indeterminate = true
 editor_preview_indeterminate = false
 
-[node name="Music" type="AudioStreamPlayer" parent="."]
-unique_name_in_owner = true
-stream = ExtResource("18_n8232")
-autoplay = true
-bus = &"Music"
-
 [node name="mouseclicks" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_n4dsa")
-bus = &"SFX"
-
-[node name="SoundStartup" type="AudioStreamPlayer" parent="."]
-unique_name_in_owner = true
-stream = ExtResource("29_etycn")
 bus = &"SFX"
 
 [connection signal="gui_input" from="Desktop" to="Desktop" method="_on_gui_input"]
