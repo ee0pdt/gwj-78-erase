@@ -64,6 +64,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_tptyl")
 script = ExtResource("2_abgi6")
+required_space_for_downgrade = 7.0
 metadata/_edit_horizontal_guides_ = [191.0]
 
 [node name="Desktop" type="Panel" parent="."]
@@ -128,7 +129,7 @@ offset_right = 289.0
 offset_bottom = 703.0
 text = "VideoChat"
 icon = ExtResource("9_ab8w2")
-file_size = 2.5
+file_size = 1.2
 
 [node name="MenuBar" parent="Desktop" instance=ExtResource("6_aen5n")]
 unique_name_in_owner = true
@@ -180,6 +181,7 @@ text = "Install Misfile Crisis"
 icon = ExtResource("15_n4dsa")
 autowrap_mode = 2
 file_size = 1.5
+system_file = true
 
 [node name="SystemFolder" parent="Desktop" instance=ExtResource("14_07nky")]
 layout_mode = 0
@@ -319,7 +321,7 @@ Welsh	cy
 Xhosa	xh
 Yiddish	ji
 Zulu	zu"
-file_size = 0.01
+file_size = 0.5
 
 [node name="PrinterDrivers" parent="Desktop/SystemFolder/Window/PanelContainer" index="1" instance=ExtResource("4_fjy5s")]
 layout_mode = 0

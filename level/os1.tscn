@@ -53,7 +53,8 @@ grow_vertical = 2
 theme = ExtResource("1_1b1c6")
 script = ExtResource("2_1d7e5")
 os_version = 1.0
-hard_drive_capacity = 50.0
+hard_drive_capacity = 40.0
+required_space_for_install = 20.0
 metadata/_edit_horizontal_guides_ = [191.0]
 
 [node name="Desktop" type="Panel" parent="."]
@@ -105,7 +106,7 @@ file_contents = "Cookie cookie cookie"
 file_size = 12.1
 infected = true
 
-[node name="Application" parent="Desktop" instance=ExtResource("5_euys8")]
+[node name="GodotApplication" parent="Desktop" instance=ExtResource("5_euys8")]
 layout_mode = 0
 offset_left = 985.0
 offset_top = 121.0
@@ -113,6 +114,7 @@ offset_right = 1113.0
 offset_bottom = 249.0
 icon = ExtResource("9_nl656")
 vertical_icon_alignment = 0
+file_size = 4.2
 
 [node name="MisfileCrisisFolder" parent="Desktop" instance=ExtResource("8_euys8")]
 layout_mode = 0
@@ -160,8 +162,9 @@ position = Vector2i(70, 90)
 
 [node name="Document" parent="Desktop/SystemFolder/Window/PanelContainer" index="0" instance=ExtResource("4_7hnyc")]
 layout_mode = 0
+text = "Sounds"
 icon = ExtResource("7_2cq1c")
-file_size = 1.2
+file_size = 4.5
 infected = true
 
 [node name="MenuBar" parent="." instance=ExtResource("9_jb3nm")]

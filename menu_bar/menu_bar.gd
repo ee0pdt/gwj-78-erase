@@ -6,6 +6,8 @@ func _on_special_menu_id_pressed(id: int) -> void:
 	match id:
 		0:
 			GameEvents.request_empty_trash.emit()
+		1:
+			GameEvents.restart.emit()
 
 
 func _on_file_menu_id_pressed(id: int) -> void:
