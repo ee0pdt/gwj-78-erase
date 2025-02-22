@@ -51,3 +51,15 @@ text = "Size:"
 unique_name_in_owner = true
 layout_mode = 2
 text = "Name:"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="CriticalSystemFile" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "Critical System File?:"
+
+[node name="FileCritical" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer4"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Name:"

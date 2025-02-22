@@ -11,7 +11,10 @@ var currently_selected_item: FileSystemItem = null
 @onready var state_machine: StateMachine = $StateMachine
 
 
+var unit: String
+
 func _ready() -> void:
+	unit = "GB" if os_version == 3.0 else "MB"
 	%SoundStartup.play()
 
 
@@ -36,7 +39,7 @@ func _get_info() -> void:
 	
 	print("Getting info")
 	
-	%InfoWindow.set_info(currently_selected_item)
+	%InfoWindow.set_info(currently_selected_item, unit)
 	%InfoWindow.show()
 
 
@@ -82,7 +85,6 @@ func _handle_attempt_install() -> void:
 	elif space_available >= required_space_for_install:
 		%InstallWindow.set_info("Installation commencing...")
 	else:
-		var unit = "GB" if os_version == 3.0 else "MB"
 		var info = str("Not enough room to install. You need ", required_space_for_install - space_available, unit, " more. Try deleting some files.")
 		%InstallWindow.set_info(info)
 	
@@ -105,7 +107,7 @@ func _handle_attempt_downgrade() -> void:
 		state_machine.transition_to("transition")
 		GameEvents.downgrade.emit()
 	else:
-		var info = str("Not enough room to expand downgrader. You need ", required_space_for_downgrade - space_available, "GB more. Try deleting some files.")
+		var info = str("Not enough room to expand downgrader. You need ", required_space_for_downgrade - space_available, unit, " more. Try deleting some files.")
 		%InstallWindow.set_info(info)
 		%InstallWindow.show()
 

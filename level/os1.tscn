@@ -53,6 +53,7 @@ grow_vertical = 2
 theme = ExtResource("1_1b1c6")
 script = ExtResource("2_1d7e5")
 os_version = 1.0
+hard_drive_capacity = 50.0
 metadata/_edit_horizontal_guides_ = [191.0]
 
 [node name="Desktop" type="Panel" parent="."]
@@ -92,13 +93,16 @@ grow_vertical = 2
 hover_icon_file = "uid://feithyqiyd3"
 screen = NodePath("")
 
-[node name="Document" parent="Desktop" instance=ExtResource("4_7hnyc")]
+[node name="Cookie" parent="Desktop" instance=ExtResource("4_7hnyc")]
 layout_mode = 0
 offset_left = 694.0
 offset_top = 169.0
 offset_right = 822.0
 offset_bottom = 297.0
+text = "Cookie.zip"
 icon = ExtResource("7_2cq1c")
+file_contents = "Cookie cookie cookie"
+file_size = 12.1
 infected = true
 
 [node name="Application" parent="Desktop" instance=ExtResource("5_euys8")]
@@ -143,10 +147,10 @@ vertical_icon_alignment = 0
 
 [node name="SystemFolder" parent="Desktop" instance=ExtResource("8_euys8")]
 layout_mode = 0
-offset_left = 21.0
-offset_top = 56.0
-offset_right = 149.0
-offset_bottom = 184.0
+offset_left = 28.0
+offset_top = 87.0
+offset_right = 156.0
+offset_bottom = 215.0
 text = "System"
 icon = ExtResource("9_3bxrh")
 
