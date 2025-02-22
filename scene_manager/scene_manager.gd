@@ -10,10 +10,10 @@ var current_scene: Node
 func _ready() -> void:
 	%SoundStartup.play()
 	await get_tree().create_timer(2.0).timeout
-	%LoadingOS.show()
+	%OS3Loading.show()
 	await get_tree().create_timer(5.0).timeout
 	%MusicOS3.play()
-	%LoadingOS.hide()
+	%OS3Loading.hide()
 	%OS3.show()
 	GameEvents.downgrade.connect(self._handle_downgrade)
 	GameEvents.restart.connect(self._handle_restart)

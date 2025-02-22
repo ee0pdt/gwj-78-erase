@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=17 format=3 uid="uid://dj2vfsx2jdmu0"]
+[gd_resource type="Theme" load_steps=19 format=3 uid="uid://dj2vfsx2jdmu0"]
 
 [ext_resource type="FontFile" uid="uid://c6l5hxqkb8oyp" path="res://assets/fonts/calibre-font-family-1740059804-0/TestCalibre-Regular-BF661746edbee52.otf" id="1_v40bh"]
 [ext_resource type="StyleBox" uid="uid://bbw4idcb3ejpp" path="res://themes/os1_mono.button_hover.stylebox" id="2_ndsb5"]
@@ -130,6 +130,24 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wpuvx"]
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.164706, 0.164706, 0.164706, 0.286275)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vyw5e"]
+bg_color = Color(0.6, 0.6, 0.6, 0.776471)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_24pj0"]
 bg_color = Color(0.164706, 0.164706, 0.164706, 0.756863)
 border_width_left = 1
@@ -191,6 +209,13 @@ PopupMenu/styles/labeled_separator_left = null
 PopupMenu/styles/labeled_separator_right = null
 PopupMenu/styles/panel = SubResource("StyleBoxFlat_ndsb5")
 PopupMenu/styles/separator = null
+ProgressBar/colors/font_color = Color(0, 0, 0, 1)
+ProgressBar/colors/font_outline_color = Color(0, 0, 0, 1)
+ProgressBar/constants/outline_size = 0
+ProgressBar/font_sizes/font_size = 28
+ProgressBar/fonts/font = ExtResource("1_v40bh")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_wpuvx")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_vyw5e")
 RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
 Window/font_sizes/title_font_size = 28
 Window/fonts/title_font = ExtResource("1_v40bh")
