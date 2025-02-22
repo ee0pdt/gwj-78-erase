@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GWJ 78 Erase"
-run/main_scene="uid://c2ny0ej7ina0g"
+run/main_scene="uid://dcyntpl7fhnhh"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

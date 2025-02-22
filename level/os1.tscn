@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bfhe57ypw3i5u"]
+[gd_scene load_steps=28 format=3 uid="uid://bfhe57ypw3i5u"]
 
 [ext_resource type="Theme" uid="uid://cmnrvs380oc6u" path="res://themes/os1_mono.tres" id="1_1b1c6"]
 [ext_resource type="Script" uid="uid://dffmsepw35cgc" path="res://level/level.gd" id="2_1d7e5"]
@@ -20,6 +20,7 @@
 [ext_resource type="AudioStream" uid="uid://dy6lng8qxlkt7" path="res://assets/audio/sfx/sfx_emptyTrash_lofi.wav" id="14_ksk6k"]
 [ext_resource type="AudioStream" uid="uid://caesi6x3j5l2" path="res://assets/audio/sfx/sfx_throwaway_lofi.wav" id="15_3bxrh"]
 [ext_resource type="AudioStream" uid="uid://cfseyacgyg6np" path="res://assets/audio/sfx/click/sfx_click1.wav" id="17_2cq1c"]
+[ext_resource type="AudioStream" uid="uid://dfcq6vml3qd5y" path="res://assets/audio/sfx/sfx_startup_lofi.wav" id="18_aerqq"]
 [ext_resource type="AudioStream" uid="uid://c1ah206sschrc" path="res://assets/audio/sfx/click/sfx_click2.wav" id="18_nl656"]
 [ext_resource type="AudioStream" uid="uid://duglvfwhnr7qp" path="res://assets/audio/sfx/click/sfx_click3.wav" id="19_aerqq"]
 [ext_resource type="AudioStream" uid="uid://wnfgdkip3462" path="res://assets/audio/sfx/click/sfx_click4.wav" id="20_k80li"]
@@ -162,6 +163,11 @@ script = ExtResource("9_8yfpd")
 [node name="SoundEmptyTrash" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("14_ksk6k")
+bus = &"SFX"
+
+[node name="SoundStartup" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("18_aerqq")
 bus = &"SFX"
 
 [node name="SoundItemAddedToTrash" type="AudioStreamPlayer" parent="."]

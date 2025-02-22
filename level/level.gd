@@ -8,11 +8,11 @@ class_name Level
 @export var required_space_for_install := 5.0
 
 var currently_selected_item: FileSystemItem = null
+@onready var state_machine: StateMachine = $StateMachine
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	%Music.play()
+	%SoundStartup.play()
 
 
 func _request_empty_trash() -> void:
@@ -47,7 +47,8 @@ func _handle_close_info():
 func _handle_item_clicked(item: FileSystemItem):
 	print("_handle_item_clicked")
 	currently_selected_item = item
-	%MenuBar.enable_file_info()
+	if %MenuBar:
+		%MenuBar.enable_file_info()
 
 
 func _handle_desktop_clicked():
@@ -98,8 +99,10 @@ func _handle_attempt_downgrade() -> void:
 		%InstallWindow.set_info("Downgrade commencing...")
 		%ProgressBar.show()
 		%InstallWindow.show()
-		await get_tree().create_timer(5.0).timeout
-		get_tree().change_scene_to_file("res://level/os1.tscn")
+		#await get_tree().create_timer(5.0).timeout
+		#get_tree().change_scene_to_file("res://level/os1.tscn")
+		state_machine.transition_to("transition")
+		GameEvents.downgrade.emit()
 	else:
 		var info = str("Not enough room to expand downgrader. You need ", required_space_for_downgrade - space_available, "GB more. Try deleting some files.")
 		%InstallWindow.set_info(info)
