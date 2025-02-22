@@ -366,7 +366,20 @@ bus = &"SFX"
 
 [node name="InstallWindow" parent="." instance=ExtResource("14_a4knm")]
 unique_name_in_owner = true
+initial_position = 0
+position = Vector2i(480, 130)
 visible = false
+
+[node name="ProgressBar" type="ProgressBar" parent="InstallWindow/Panel/Label" index="0"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(250, 50)
+offset_left = 14.0
+offset_top = 89.0
+offset_right = 264.0
+offset_bottom = 139.0
+indeterminate = true
+editor_preview_indeterminate = false
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
@@ -387,3 +400,4 @@ bus = &"SFX"
 [editable path="Desktop/MisfileCrisisFolder"]
 [editable path="Desktop/SystemFolder"]
 [editable path="EmptyTrashDialog"]
+[editable path="InstallWindow"]
