@@ -22,7 +22,7 @@ func exit() -> void:
 # Virtual function. Corresponds to the `_process()` callback.
 func update(delta: float) -> void:
 	if steps_remaining <= 0:
-		if randi_range(0, 10) > 5:
+		if randi_range(0, 10) > 8:
 			state_machine.transition_to("Asleep")
 		else:
 			direction = Vector2(randi() % 10 - 5, randi() % 10 - 5).normalized()
