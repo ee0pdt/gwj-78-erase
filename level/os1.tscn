@@ -13,8 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://byxkbllcqjjr3" path="res://file_system_items/folder/folder.tscn" id="8_euys8"]
 [ext_resource type="Script" uid="uid://30qghlfcc1sv" path="res://fsm/state_machine.gd" id="8_k2s33"]
 [ext_resource type="Script" uid="uid://0mcjqa8ciue7" path="res://level/states/asleep.gd" id="9_8yfpd"]
+[ext_resource type="Texture2D" uid="uid://dmodkmrjwuepq" path="res://assets/images/os1/Godot.png" id="9_ijmkn"]
 [ext_resource type="PackedScene" uid="uid://jr15xa6g2paw" path="res://menu_bar/menu_bar.tscn" id="9_jb3nm"]
-[ext_resource type="Texture2D" uid="uid://cv6u3jwv8aapl" path="res://assets/images/GodotOS1@0.25x.png" id="9_nl656"]
 [ext_resource type="Texture2D" uid="uid://ddh5nl5sdg2oi" path="res://assets/images/os1/Folder.png" id="11_0i82s"]
 [ext_resource type="PackedScene" uid="uid://b27g4gvam75qu" path="res://file_system_items/installer/installer.tscn" id="12_k80li"]
 [ext_resource type="Texture2D" uid="uid://b7a1lsvohedn6" path="res://assets/images/InstallerOS1@0.25x.png" id="13_f1j2c"]
@@ -118,7 +118,7 @@ offset_left = 985.0
 offset_top = 121.0
 offset_right = 1113.0
 offset_bottom = 249.0
-icon = ExtResource("9_nl656")
+icon = ExtResource("9_ijmkn")
 vertical_icon_alignment = 0
 file_size = 4.2
 
