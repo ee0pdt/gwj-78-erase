@@ -154,6 +154,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_jodkt")
 
 [node name="Panel" type="Panel" parent="Victory/PanelContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(480, 640)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -162,7 +163,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_mlxu3")
 
 [node name="VictoryLoading" type="ProgressBar" parent="Victory/PanelContainer/Panel"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(120, 0)
+custom_minimum_size = Vector2(240, 20)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -178,8 +179,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("7_4al60")
-indeterminate = true
-editor_preview_indeterminate = false
+show_percentage = false
 
 [node name="MouseClick" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true

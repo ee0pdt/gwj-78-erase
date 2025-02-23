@@ -13,7 +13,7 @@ func _ready() -> void:
 	%OS3Loading.show()
 	
 	var tween = create_tween()
-	tween.tween_property(%LoadingOS, "value", 100.0, 5.0)
+	tween.tween_property(%LoadingOS, "value", 100.0, 3.0)
 	await tween.finished
 	
 	%MusicOS3.play()
@@ -25,6 +25,11 @@ func _ready() -> void:
 	GameEvents.install.connect(self._handle_install)
 	GameEvents.item_clicked.connect(self._handle_click)
 	current_scene = %OS3
+	
+
+func _unhandled_key_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_page_down"):
+		_handle_install()
 
 
 func _handle_click() -> void:
@@ -33,6 +38,7 @@ func _handle_click() -> void:
 
 func _handle_install() -> void:
 	await get_tree().create_timer(2.0).timeout
+	
 	%Victory.show()
 	var loading_tween = create_tween()
 	loading_tween.tween_property(%VictoryLoading, "value", 100.0, 5.0)
