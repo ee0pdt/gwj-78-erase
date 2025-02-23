@@ -3,7 +3,6 @@ extends FileSystemItem
 @export_file() var hover_icon_file
 @export_file() var full_icon_file
 @export_file() var full_hover_icon_file
-@export_node_path() var screen
 
 var original_icon := icon
 var hover_icon := icon

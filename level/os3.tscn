@@ -4,13 +4,13 @@
 [ext_resource type="Script" uid="uid://dffmsepw35cgc" path="res://level/level.gd" id="2_abgi6"]
 [ext_resource type="Script" uid="uid://pjn5egmtl16x" path="res://desktop/desktop.gd" id="3_abgi6"]
 [ext_resource type="Texture2D" uid="uid://drdspsddgy2c7" path="res://assets/images/francesco-ungaro-p3NOK6MhvKQ-unsplash.jpg" id="4_abgi6"]
-[ext_resource type="PackedScene" uid="uid://bepushbvyj688" path="res://file_system_items/trash/trash.tscn" id="4_aen5n"]
 [ext_resource type="PackedScene" uid="uid://d4c8dtd2jia1d" path="res://file_system_items/document/document.tscn" id="4_fjy5s"]
 [ext_resource type="PackedScene" uid="uid://dmf3a1es3sgi4" path="res://file_system_items/application/application.tscn" id="5_iqeg5"]
 [ext_resource type="PackedScene" uid="uid://b27g4gvam75qu" path="res://file_system_items/installer/installer.tscn" id="5_t67gl"]
-[ext_resource type="Texture2D" uid="uid://bu23vc2x32mbs" path="res://assets/images/512-TrashIcon-macosx1.png" id="5_tptyl"]
 [ext_resource type="PackedScene" uid="uid://dpf8vobr127ok" path="res://info_window/info_window.tscn" id="6_a4knm"]
 [ext_resource type="PackedScene" uid="uid://jr15xa6g2paw" path="res://menu_bar/menu_bar.tscn" id="6_aen5n"]
+[ext_resource type="Script" uid="uid://dtb75nehl5f26" path="res://file_system_items/trash/trash.gd" id="6_n4dsa"]
+[ext_resource type="Texture2D" uid="uid://ck2q4xcqiksr4" path="res://assets/images/TrashEmpty@1x.png" id="6_vf410"]
 [ext_resource type="PackedScene" uid="uid://wyj22wjeccw6" path="res://empty_trash_dialog/empty_trash_dialog.tscn" id="7_t67gl"]
 [ext_resource type="Script" uid="uid://30qghlfcc1sv" path="res://fsm/state_machine.gd" id="8_ab8w2"]
 [ext_resource type="Script" uid="uid://0mcjqa8ciue7" path="res://level/states/asleep.gd" id="9_6jmfi"]
@@ -100,7 +100,7 @@ offset_bottom = 709.0
 size_flags_vertical = 8
 theme_override_styles/panel = SubResource("StyleBoxFlat_tptyl")
 
-[node name="Trash" parent="Desktop" instance=ExtResource("4_aen5n")]
+[node name="Trash" type="Button" parent="Desktop"]
 unique_name_in_owner = true
 layout_mode = 2
 offset_left = 1094.0
@@ -109,9 +109,17 @@ offset_right = 1222.0
 offset_bottom = 693.0
 grow_horizontal = 0
 grow_vertical = 2
-text = ""
-icon = ExtResource("5_tptyl")
-screen = NodePath("")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/icon_max_width = 64
+icon = ExtResource("6_vf410")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 2
+expand_icon = true
+script = ExtResource("6_n4dsa")
+hover_icon_file = "uid://ch2hth4vi5nf4"
+full_icon_file = "uid://bbgpgt73dul77"
+full_hover_icon_file = "uid://dtfgebu31omaf"
 
 [node name="Godot" parent="Desktop" instance=ExtResource("5_iqeg5")]
 layout_mode = 0
