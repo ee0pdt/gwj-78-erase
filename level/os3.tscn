@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://c2ny0ej7ina0g"]
+[gd_scene load_steps=35 format=3 uid="uid://c2ny0ej7ina0g"]
 
 [ext_resource type="Theme" uid="uid://dj2vfsx2jdmu0" path="res://themes/os3.tres" id="1_tptyl"]
 [ext_resource type="Script" uid="uid://dffmsepw35cgc" path="res://level/level.gd" id="2_abgi6"]
@@ -6,16 +6,18 @@
 [ext_resource type="Texture2D" uid="uid://drdspsddgy2c7" path="res://assets/images/francesco-ungaro-p3NOK6MhvKQ-unsplash.jpg" id="4_abgi6"]
 [ext_resource type="PackedScene" uid="uid://d4c8dtd2jia1d" path="res://file_system_items/document/document.tscn" id="4_fjy5s"]
 [ext_resource type="PackedScene" uid="uid://dmf3a1es3sgi4" path="res://file_system_items/application/application.tscn" id="5_iqeg5"]
+[ext_resource type="Texture2D" uid="uid://dr5us003mmpp7" path="res://assets/images/TrashEmpty 2@1x.png" id="5_n4dsa"]
 [ext_resource type="PackedScene" uid="uid://b27g4gvam75qu" path="res://file_system_items/installer/installer.tscn" id="5_t67gl"]
 [ext_resource type="PackedScene" uid="uid://dpf8vobr127ok" path="res://info_window/info_window.tscn" id="6_a4knm"]
 [ext_resource type="PackedScene" uid="uid://jr15xa6g2paw" path="res://menu_bar/menu_bar.tscn" id="6_aen5n"]
 [ext_resource type="Script" uid="uid://dtb75nehl5f26" path="res://file_system_items/trash/trash.gd" id="6_n4dsa"]
-[ext_resource type="Texture2D" uid="uid://ck2q4xcqiksr4" path="res://assets/images/TrashEmpty@1x.png" id="6_vf410"]
 [ext_resource type="PackedScene" uid="uid://wyj22wjeccw6" path="res://empty_trash_dialog/empty_trash_dialog.tscn" id="7_t67gl"]
 [ext_resource type="Script" uid="uid://30qghlfcc1sv" path="res://fsm/state_machine.gd" id="8_ab8w2"]
 [ext_resource type="Texture2D" uid="uid://c58brcl3a231t" path="res://assets/images/VideoChat@1x.png" id="8_vf410"]
 [ext_resource type="Script" uid="uid://0mcjqa8ciue7" path="res://level/states/asleep.gd" id="9_6jmfi"]
 [ext_resource type="Texture2D" uid="uid://dg27qhwr7ut3r" path="res://assets/images/Calendar@1x.png" id="9_n4dsa"]
+[ext_resource type="Texture2D" uid="uid://dj81cdgyd3yac" path="res://assets/images/SnipCut@1x.png" id="10_etycn"]
+[ext_resource type="Texture2D" uid="uid://cu7e7kb12pnse" path="res://assets/images/TicTac@1x.png" id="11_v53wj"]
 [ext_resource type="PackedScene" uid="uid://dthypb60ncs4k" path="res://file_system_items/downgrader/downgrader.tscn" id="12_6jmfi"]
 [ext_resource type="Texture2D" uid="uid://bpa87pe2vyeov" path="res://assets/images/Downgrader@1x.png" id="13_vf410"]
 [ext_resource type="PackedScene" uid="uid://byxkbllcqjjr3" path="res://file_system_items/folder/folder.tscn" id="14_07nky"]
@@ -112,7 +114,7 @@ grow_horizontal = 0
 grow_vertical = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/icon_max_width = 64
-icon = ExtResource("6_vf410")
+icon = ExtResource("5_n4dsa")
 flat = true
 icon_alignment = 1
 vertical_icon_alignment = 2
@@ -150,11 +152,36 @@ text = "Calendar"
 icon = ExtResource("9_n4dsa")
 file_size = 0.2
 
+[node name="SnipChat" parent="Desktop" instance=ExtResource("5_iqeg5")]
+layout_mode = 0
+offset_left = 394.0
+offset_top = 588.0
+offset_right = 514.0
+offset_bottom = 708.0
+text = "SnipChat
+"
+icon = ExtResource("10_etycn")
+file_size = 0.3
+
+[node name="TicTac" parent="Desktop" instance=ExtResource("5_iqeg5")]
+layout_mode = 0
+offset_left = 497.0
+offset_top = 588.0
+offset_right = 617.0
+offset_bottom = 708.0
+text = "TicTac
+"
+icon = ExtResource("11_v53wj")
+file_size = 0.7
+
 [node name="MenuBar" parent="Desktop" instance=ExtResource("6_aen5n")]
 unique_name_in_owner = true
 layout_mode = 0
 offset_right = 160.0
 offset_bottom = 42.0
+
+[node name="SpecialMenu" parent="Desktop/MenuBar" index="1"]
+item_0/text = "Empty Recycle Bin"
 
 [node name="MisfileCrisisFolder" parent="Desktop" instance=ExtResource("14_07nky")]
 layout_mode = 0
@@ -444,6 +471,7 @@ bus = &"SFX"
 [connection signal="confirmed" from="EmptyTrashDialog" to="." method="_confirm_empty_trash"]
 [connection signal="close_requested" from="InstallWindow" to="." method="_handle_close_installer"]
 
+[editable path="Desktop/MenuBar"]
 [editable path="Desktop/MisfileCrisisFolder"]
 [editable path="Desktop/SystemFolder"]
 [editable path="Desktop/SystemFolder/Window/PanelContainer/FilingCabinetFolder"]
