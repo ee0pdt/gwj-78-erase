@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://c2ny0ej7ina0g"]
+[gd_scene load_steps=33 format=3 uid="uid://c2ny0ej7ina0g"]
 
 [ext_resource type="Theme" uid="uid://dj2vfsx2jdmu0" path="res://themes/os3.tres" id="1_tptyl"]
 [ext_resource type="Script" uid="uid://dffmsepw35cgc" path="res://level/level.gd" id="2_abgi6"]
@@ -13,8 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://ck2q4xcqiksr4" path="res://assets/images/TrashEmpty@1x.png" id="6_vf410"]
 [ext_resource type="PackedScene" uid="uid://wyj22wjeccw6" path="res://empty_trash_dialog/empty_trash_dialog.tscn" id="7_t67gl"]
 [ext_resource type="Script" uid="uid://30qghlfcc1sv" path="res://fsm/state_machine.gd" id="8_ab8w2"]
+[ext_resource type="Texture2D" uid="uid://c58brcl3a231t" path="res://assets/images/VideoChat@1x.png" id="8_vf410"]
 [ext_resource type="Script" uid="uid://0mcjqa8ciue7" path="res://level/states/asleep.gd" id="9_6jmfi"]
-[ext_resource type="Texture2D" uid="uid://cjast7ach5qcn" path="res://assets/images/video-camera-technology.svg" id="9_ab8w2"]
+[ext_resource type="Texture2D" uid="uid://dg27qhwr7ut3r" path="res://assets/images/Calendar@1x.png" id="9_n4dsa"]
 [ext_resource type="PackedScene" uid="uid://dthypb60ncs4k" path="res://file_system_items/downgrader/downgrader.tscn" id="12_6jmfi"]
 [ext_resource type="Texture2D" uid="uid://bpa87pe2vyeov" path="res://assets/images/Downgrader@1x.png" id="13_vf410"]
 [ext_resource type="PackedScene" uid="uid://byxkbllcqjjr3" path="res://file_system_items/folder/folder.tscn" id="14_07nky"]
@@ -131,13 +132,23 @@ file_size = 0.5
 
 [node name="VideoChat" parent="Desktop" instance=ExtResource("5_iqeg5")]
 layout_mode = 0
-offset_left = 169.0
+offset_left = 177.0
 offset_top = 583.0
-offset_right = 289.0
+offset_right = 297.0
 offset_bottom = 703.0
 text = "VideoChat"
-icon = ExtResource("9_ab8w2")
+icon = ExtResource("8_vf410")
 file_size = 1.2
+
+[node name="Calendar" parent="Desktop" instance=ExtResource("5_iqeg5")]
+layout_mode = 0
+offset_left = 286.0
+offset_top = 588.0
+offset_right = 406.0
+offset_bottom = 708.0
+text = "Calendar"
+icon = ExtResource("9_n4dsa")
+file_size = 0.2
 
 [node name="MenuBar" parent="Desktop" instance=ExtResource("6_aen5n")]
 unique_name_in_owner = true
