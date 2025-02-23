@@ -363,6 +363,7 @@ offset_top = 160.0
 offset_right = 474.0
 offset_bottom = 288.0
 text = "Filing Cabinet"
+password = "panic"
 
 [node name="Window" parent="Desktop/SystemFolder/Window/PanelContainer/FilingCabinetFolder" index="1"]
 initial_position = 0

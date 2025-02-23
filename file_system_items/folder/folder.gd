@@ -2,6 +2,8 @@ class_name Folder
 extends FileSystemItem
 
 
+@export var password : String
+
 
 func _ready() -> void:
 	%Window.title = text
