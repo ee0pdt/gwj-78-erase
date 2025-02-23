@@ -34,6 +34,11 @@ func _handle_click() -> void:
 func _handle_install() -> void:
 	await get_tree().create_timer(2.0).timeout
 	%Victory.show()
+	var loading_tween = create_tween()
+	loading_tween.tween_property(%VictoryLoading, "value", 100.0, 5.0)
+	await loading_tween.finished
+	%VictoryLoading.hide()
+	%SoundVictory.play()
 	current_scene.queue_free()
 
 

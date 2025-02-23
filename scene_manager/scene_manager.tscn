@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dcyntpl7fhnhh"]
+[gd_scene load_steps=23 format=3 uid="uid://dcyntpl7fhnhh"]
 
 [ext_resource type="PackedScene" uid="uid://c2ny0ej7ina0g" path="res://level/os3.tscn" id="1_6w36t"]
 [ext_resource type="Script" uid="uid://d2gi4f4gegll1" path="res://scene_manager/scene_manager.gd" id="1_ms3da"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://c1ah206sschrc" path="res://assets/audio/sfx/click/sfx_click2.wav" id="12_5rejk"]
 [ext_resource type="AudioStream" uid="uid://duglvfwhnr7qp" path="res://assets/audio/sfx/click/sfx_click3.wav" id="13_ktbv5"]
 [ext_resource type="AudioStream" uid="uid://wnfgdkip3462" path="res://assets/audio/sfx/click/sfx_click4.wav" id="14_flbuk"]
+[ext_resource type="AudioStream" uid="uid://7vynn8osm4cl" path="res://assets/audio/sfx/sfx_victory_lofi.wav" id="15_5rejk"]
 
 [sub_resource type="Gradient" id="Gradient_klko5"]
 colors = PackedColorArray(0.101562, 0.101562, 0.101562, 1, 0, 0, 0, 1)
@@ -159,7 +160,8 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxTexture_mlxu3")
 
-[node name="LoadingOS1" type="ProgressBar" parent="Victory/PanelContainer/Panel"]
+[node name="VictoryLoading" type="ProgressBar" parent="Victory/PanelContainer/Panel"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -182,4 +184,9 @@ editor_preview_indeterminate = false
 [node name="MouseClick" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_v2dvg")
+bus = &"SFX"
+
+[node name="SoundVictory" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("15_5rejk")
 bus = &"SFX"

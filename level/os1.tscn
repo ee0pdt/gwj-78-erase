@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bfhe57ypw3i5u"]
+[gd_scene load_steps=38 format=3 uid="uid://bfhe57ypw3i5u"]
 
 [ext_resource type="Theme" uid="uid://cmnrvs380oc6u" path="res://themes/os1_mono.tres" id="1_1b1c6"]
 [ext_resource type="Script" uid="uid://dffmsepw35cgc" path="res://level/level.gd" id="2_1d7e5"]
@@ -18,7 +18,6 @@
 [ext_resource type="Texture2D" uid="uid://5l2mhrbbq17" path="res://assets/images/os1/Film.png" id="10_ff102"]
 [ext_resource type="Texture2D" uid="uid://ddh5nl5sdg2oi" path="res://assets/images/os1/Folder.png" id="11_0i82s"]
 [ext_resource type="PackedScene" uid="uid://b27g4gvam75qu" path="res://file_system_items/installer/installer.tscn" id="12_k80li"]
-[ext_resource type="AudioStream" uid="uid://pvya3ndgshk5" path="res://assets/audio/music/music_lofi_loop.ogg" id="14_1b1c6"]
 [ext_resource type="AudioStream" uid="uid://dy6lng8qxlkt7" path="res://assets/audio/sfx/sfx_emptyTrash_lofi.wav" id="14_ksk6k"]
 [ext_resource type="Texture2D" uid="uid://bntwmphhc0ty3" path="res://assets/images/os1/DocAsleep.png" id="14_sjly8"]
 [ext_resource type="Texture2D" uid="uid://jj7byq0o2f4d" path="res://assets/images/os1/Disk.png" id="15_0pr33"]
@@ -290,12 +289,6 @@ bus = &"SFX"
 unique_name_in_owner = true
 stream = ExtResource("15_3bxrh")
 bus = &"SFX"
-
-[node name="Music" type="AudioStreamPlayer" parent="."]
-unique_name_in_owner = true
-stream = ExtResource("14_1b1c6")
-autoplay = true
-bus = &"Music"
 
 [node name="mouseclicks" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
