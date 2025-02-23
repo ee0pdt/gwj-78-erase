@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://dj2vfsx2jdmu0" path="res://themes/os3.tres" id="1_tptyl"]
 [ext_resource type="Script" uid="uid://dffmsepw35cgc" path="res://level/level.gd" id="2_abgi6"]
 [ext_resource type="Script" uid="uid://pjn5egmtl16x" path="res://desktop/desktop.gd" id="3_abgi6"]
-[ext_resource type="Texture2D" uid="uid://drdspsddgy2c7" path="res://assets/images/francesco-ungaro-p3NOK6MhvKQ-unsplash.jpg" id="4_abgi6"]
+[ext_resource type="Texture2D" uid="uid://cw87ukregbcvk" path="res://assets/images/Background-1.png" id="3_qvpud"]
 [ext_resource type="PackedScene" uid="uid://d4c8dtd2jia1d" path="res://file_system_items/document/document.tscn" id="4_fjy5s"]
 [ext_resource type="PackedScene" uid="uid://dmf3a1es3sgi4" path="res://file_system_items/application/application.tscn" id="5_iqeg5"]
 [ext_resource type="Texture2D" uid="uid://dr5us003mmpp7" path="res://assets/images/TrashEmpty 2@1x.png" id="5_n4dsa"]
@@ -33,7 +33,7 @@
 [ext_resource type="AudioStream" uid="uid://l23hf5334bn1" path="res://assets/audio/sfx/sfx_droplet_hifi.wav" id="31_qvpud"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aen5n"]
-texture = ExtResource("4_abgi6")
+texture = ExtResource("3_qvpud")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_abgi6"]
 bg_color = Color(0.137255, 0.137255, 0.137255, 0.709804)
@@ -163,6 +163,7 @@ text = "SnipChat
 "
 icon = ExtResource("10_etycn")
 file_size = 0.3
+infected = true
 
 [node name="TicTac" parent="Desktop" instance=ExtResource("5_iqeg5")]
 layout_mode = 0
@@ -186,10 +187,10 @@ item_0/text = "Empty Recycle Bin"
 
 [node name="MisfileCrisisFolder" parent="Desktop" instance=ExtResource("14_07nky")]
 layout_mode = 0
-offset_left = 422.0
-offset_top = 211.0
-offset_right = 550.0
-offset_bottom = 339.0
+offset_left = 568.0
+offset_top = 177.0
+offset_right = 696.0
+offset_bottom = 305.0
 text = "Misfile Crisis"
 
 [node name="ReadMe" parent="Desktop/MisfileCrisisFolder/Window/PanelContainer" index="0" instance=ExtResource("4_fjy5s")]
