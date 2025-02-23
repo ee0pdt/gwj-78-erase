@@ -11,10 +11,15 @@ func _ready() -> void:
 	%SoundStartup.play()
 	await get_tree().create_timer(2.0).timeout
 	%OS3Loading.show()
-	await get_tree().create_timer(5.0).timeout
+	
+	var tween = create_tween()
+	tween.tween_property(%LoadingOS, "value", 100.0, 5.0)
+	await tween.finished
+	
 	%MusicOS3.play()
 	%OS3Loading.hide()
 	%OS3.show()
+	
 	GameEvents.downgrade.connect(self._handle_downgrade)
 	GameEvents.restart.connect(self._handle_restart)
 	GameEvents.install.connect(self._handle_install)
@@ -53,9 +58,12 @@ func _handle_downgrade() -> void:
 	await get_tree().create_timer(5.0).timeout
 	
 	%OS1Loading.show()
+	%SoundStartupOS1.play()
 	%OS3.queue_free()
 	
-	await get_tree().create_timer(2.0).timeout
+	var loading_tween = create_tween()
+	loading_tween.tween_property(%LoadingOS1, "value", 100.0, 5.0)
+	await loading_tween.finished
 	
 	# Create crossfade
 	var tween = create_tween()

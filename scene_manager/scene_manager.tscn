@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dcyntpl7fhnhh"]
+[gd_scene load_steps=17 format=3 uid="uid://dcyntpl7fhnhh"]
 
 [ext_resource type="PackedScene" uid="uid://c2ny0ej7ina0g" path="res://level/os3.tscn" id="1_6w36t"]
 [ext_resource type="Script" uid="uid://d2gi4f4gegll1" path="res://scene_manager/scene_manager.gd" id="1_ms3da"]
@@ -8,7 +8,20 @@
 [ext_resource type="Theme" uid="uid://dj2vfsx2jdmu0" path="res://themes/os3.tres" id="5_mlxu3"]
 [ext_resource type="Texture2D" uid="uid://cl68s7gfimstn" path="res://assets/images/a3k5lpwsn4gm7en71aa.png" id="6_n64yn"]
 [ext_resource type="Theme" uid="uid://cmnrvs380oc6u" path="res://themes/os1_mono.tres" id="7_4al60"]
-[ext_resource type="Texture2D" uid="uid://cv6u3jwv8aapl" path="res://assets/images/GodotOS1@0.25x.png" id="8_jodkt"]
+[ext_resource type="AudioStream" uid="uid://dfcq6vml3qd5y" path="res://assets/audio/sfx/sfx_startup_lofi.wav" id="7_klko5"]
+[ext_resource type="Texture2D" uid="uid://b1qsxwqgnhe3x" path="res://assets/images/pixil-frame-0-2.png" id="9_mlxu3"]
+
+[sub_resource type="Gradient" id="Gradient_klko5"]
+colors = PackedColorArray(0.101562, 0.101562, 0.101562, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8q348"]
+gradient = SubResource("Gradient_klko5")
+fill = 1
+fill_from = Vector2(0.502137, 0.517094)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dq84e"]
+texture = SubResource("GradientTexture2D_8q348")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4al60"]
 texture = ExtResource("6_n64yn")
@@ -17,7 +30,7 @@ texture = ExtResource("6_n64yn")
 texture = ExtResource("6_n64yn")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mlxu3"]
-texture = ExtResource("8_jodkt")
+texture = ExtResource("9_mlxu3")
 
 [node name="SceneManager" type="Control"]
 layout_mode = 3
@@ -54,26 +67,31 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("5_mlxu3")
 
-[node name="LoadingOS" type="ProgressBar" parent="OS3Loading"]
-unique_name_in_owner = true
+[node name="PanelContainer" type="PanelContainer" parent="OS3Loading"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -120.0
-offset_top = -20.0
-offset_right = 120.0
-offset_bottom = 20.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-indeterminate = true
-editor_preview_indeterminate = false
+theme_override_styles/panel = SubResource("StyleBoxTexture_dq84e")
+
+[node name="LoadingOS" type="ProgressBar" parent="OS3Loading/PanelContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 10)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+show_percentage = false
 
 [node name="SoundStartup" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("5_5du7x")
+bus = &"SFX"
+
+[node name="SoundStartupOS1" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("7_klko5")
 bus = &"SFX"
 
 [node name="OS1Loading" type="Control" parent="."]
@@ -97,13 +115,12 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_4al60")
 
 [node name="LoadingOS1" type="ProgressBar" parent="OS1Loading/PanelContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(120, 0)
+custom_minimum_size = Vector2(120, 20)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("7_4al60")
-indeterminate = true
-editor_preview_indeterminate = false
+show_percentage = false
 
 [node name="Victory" type="Control" parent="."]
 unique_name_in_owner = true
@@ -125,8 +142,28 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_jodkt")
 
 [node name="Panel" type="Panel" parent="Victory/PanelContainer"]
-custom_minimum_size = Vector2(640, 480)
+custom_minimum_size = Vector2(480, 640)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxTexture_mlxu3")
+
+[node name="LoadingOS1" type="ProgressBar" parent="Victory/PanelContainer/Panel"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -12.5
+offset_right = 60.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("7_4al60")
+indeterminate = true
+editor_preview_indeterminate = false
