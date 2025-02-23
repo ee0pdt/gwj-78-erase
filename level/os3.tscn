@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://c2ny0ej7ina0g"]
+[gd_scene load_steps=36 format=3 uid="uid://c2ny0ej7ina0g"]
 
 [ext_resource type="Theme" uid="uid://dj2vfsx2jdmu0" path="res://themes/os3.tres" id="1_tptyl"]
 [ext_resource type="Script" uid="uid://dffmsepw35cgc" path="res://level/level.gd" id="2_abgi6"]
@@ -30,6 +30,7 @@
 [ext_resource type="AudioStream" uid="uid://c1ah206sschrc" path="res://assets/audio/sfx/click/sfx_click2.wav" id="22_7ikqj"]
 [ext_resource type="AudioStream" uid="uid://duglvfwhnr7qp" path="res://assets/audio/sfx/click/sfx_click3.wav" id="23_07nky"]
 [ext_resource type="AudioStream" uid="uid://wnfgdkip3462" path="res://assets/audio/sfx/click/sfx_click4.wav" id="24_vf410"]
+[ext_resource type="AudioStream" uid="uid://l23hf5334bn1" path="res://assets/audio/sfx/sfx_droplet_hifi.wav" id="31_qvpud"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aen5n"]
 texture = ExtResource("4_abgi6")
@@ -463,6 +464,11 @@ editor_preview_indeterminate = false
 
 [node name="mouseclicks" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_n4dsa")
+bus = &"SFX"
+
+[node name="SoundPopup" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("31_qvpud")
 bus = &"SFX"
 
 [connection signal="gui_input" from="Desktop" to="Desktop" method="_on_gui_input"]

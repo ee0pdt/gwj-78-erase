@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bfhe57ypw3i5u"]
+[gd_scene load_steps=32 format=3 uid="uid://bfhe57ypw3i5u"]
 
 [ext_resource type="Theme" uid="uid://cmnrvs380oc6u" path="res://themes/os1_mono.tres" id="1_1b1c6"]
 [ext_resource type="Script" uid="uid://dffmsepw35cgc" path="res://level/level.gd" id="2_1d7e5"]
@@ -26,6 +26,7 @@
 [ext_resource type="AudioStream" uid="uid://c1ah206sschrc" path="res://assets/audio/sfx/click/sfx_click2.wav" id="18_nl656"]
 [ext_resource type="AudioStream" uid="uid://duglvfwhnr7qp" path="res://assets/audio/sfx/click/sfx_click3.wav" id="19_aerqq"]
 [ext_resource type="AudioStream" uid="uid://wnfgdkip3462" path="res://assets/audio/sfx/click/sfx_click4.wav" id="20_k80li"]
+[ext_resource type="AudioStream" uid="uid://l23hf5334bn1" path="res://assets/audio/sfx/sfx_droplet_hifi.wav" id="21_0i82s"]
 [ext_resource type="PackedScene" uid="uid://cwrx8tafveswp" path="res://install_window/install_window.tscn" id="27_j6sx4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k2s33"]
@@ -199,6 +200,11 @@ bus = &"SFX"
 [node name="SoundStartup" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("18_aerqq")
+bus = &"SFX"
+
+[node name="SoundPopup" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("21_0i82s")
 bus = &"SFX"
 
 [node name="SoundItemAddedToTrash" type="AudioStreamPlayer" parent="."]

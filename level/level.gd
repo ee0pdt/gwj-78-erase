@@ -19,10 +19,12 @@ func _ready() -> void:
 
 
 func _request_empty_trash() -> void:
+	%SoundPopup.play()
 	%EmptyTrashDialog.show()
 
 
 func _confirm_empty_trash() -> void:
+	%SoundPopup.play()
 	print("empty trash confirmed")
 	%EmptyTrashDialog.hide()
 	GameEvents.empty_trash.emit()
@@ -78,6 +80,7 @@ func _handle_file_added_to_trash(file: FileSystemItem):
 
 
 func _handle_attempt_install() -> void:
+	%SoundPopup.play()
 	var space_available = hard_drive_capacity - _calc_storage_usage()
 	
 	if os_version > 1.0:
@@ -97,6 +100,7 @@ func _handle_close_installer() -> void:
 	
 
 func _handle_attempt_downgrade() -> void:
+	%SoundPopup.play()
 	var space_available = hard_drive_capacity - _calc_storage_usage()
 	
 	if space_available >= required_space_for_downgrade:
