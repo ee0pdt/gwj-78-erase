@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dcyntpl7fhnhh"]
+[gd_scene load_steps=22 format=3 uid="uid://dcyntpl7fhnhh"]
 
 [ext_resource type="PackedScene" uid="uid://c2ny0ej7ina0g" path="res://level/os3.tscn" id="1_6w36t"]
 [ext_resource type="Script" uid="uid://d2gi4f4gegll1" path="res://scene_manager/scene_manager.gd" id="1_ms3da"]
@@ -10,6 +10,10 @@
 [ext_resource type="Theme" uid="uid://cmnrvs380oc6u" path="res://themes/os1_mono.tres" id="7_4al60"]
 [ext_resource type="AudioStream" uid="uid://dfcq6vml3qd5y" path="res://assets/audio/sfx/sfx_startup_lofi.wav" id="7_klko5"]
 [ext_resource type="Texture2D" uid="uid://b1qsxwqgnhe3x" path="res://assets/images/pixil-frame-0-2.png" id="9_mlxu3"]
+[ext_resource type="AudioStream" uid="uid://cfseyacgyg6np" path="res://assets/audio/sfx/click/sfx_click1.wav" id="11_m0d1d"]
+[ext_resource type="AudioStream" uid="uid://c1ah206sschrc" path="res://assets/audio/sfx/click/sfx_click2.wav" id="12_5rejk"]
+[ext_resource type="AudioStream" uid="uid://duglvfwhnr7qp" path="res://assets/audio/sfx/click/sfx_click3.wav" id="13_ktbv5"]
+[ext_resource type="AudioStream" uid="uid://wnfgdkip3462" path="res://assets/audio/sfx/click/sfx_click4.wav" id="14_flbuk"]
 
 [sub_resource type="Gradient" id="Gradient_klko5"]
 colors = PackedColorArray(0.101562, 0.101562, 0.101562, 1, 0, 0, 0, 1)
@@ -31,6 +35,13 @@ texture = ExtResource("6_n64yn")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mlxu3"]
 texture = ExtResource("9_mlxu3")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_v2dvg"]
+streams_count = 4
+stream_0/stream = ExtResource("11_m0d1d")
+stream_1/stream = ExtResource("12_5rejk")
+stream_2/stream = ExtResource("13_ktbv5")
+stream_3/stream = ExtResource("14_flbuk")
 
 [node name="SceneManager" type="Control"]
 layout_mode = 3
@@ -167,3 +178,8 @@ size_flags_vertical = 4
 theme = ExtResource("7_4al60")
 indeterminate = true
 editor_preview_indeterminate = false
+
+[node name="MouseClick" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_v2dvg")
+bus = &"SFX"

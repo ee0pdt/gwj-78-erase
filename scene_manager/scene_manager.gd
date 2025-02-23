@@ -23,7 +23,12 @@ func _ready() -> void:
 	GameEvents.downgrade.connect(self._handle_downgrade)
 	GameEvents.restart.connect(self._handle_restart)
 	GameEvents.install.connect(self._handle_install)
+	GameEvents.item_clicked.connect(self._handle_click)
 	current_scene = %OS3
+
+
+func _handle_click() -> void:
+	%MouseClick.play()
 
 
 func _handle_install() -> void:

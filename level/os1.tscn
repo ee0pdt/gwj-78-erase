@@ -92,7 +92,6 @@ offset_bottom = 706.0
 grow_horizontal = 0
 grow_vertical = 2
 hover_icon_file = "uid://feithyqiyd3"
-screen = NodePath("")
 
 [node name="Cookie" parent="Desktop" instance=ExtResource("4_7hnyc")]
 layout_mode = 0
@@ -214,6 +213,7 @@ autoplay = true
 bus = &"Music"
 
 [node name="mouseclicks" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_f1j2c")
 bus = &"SFX"
 
