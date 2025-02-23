@@ -211,6 +211,9 @@ offset_bottom = 213.0
 text = "System Folder"
 system_file = true
 
+[node name="Window" parent="Desktop/SystemFolder" index="1"]
+size = Vector2i(500, 300)
+
 [node name="LanguageFiles" parent="Desktop/SystemFolder/Window/PanelContainer" index="0" instance=ExtResource("4_fjy5s")]
 layout_mode = 0
 offset_bottom = 120.0
@@ -353,6 +356,30 @@ file_contents = "Printer Drivers
 "
 file_size = 1.2
 
+[node name="FilingCabinetFolder" parent="Desktop/SystemFolder/Window/PanelContainer" index="2" instance=ExtResource("14_07nky")]
+layout_mode = 0
+offset_left = 346.0
+offset_top = 160.0
+offset_right = 474.0
+offset_bottom = 288.0
+text = "Filing Cabinet"
+
+[node name="Window" parent="Desktop/SystemFolder/Window/PanelContainer/FilingCabinetFolder" index="1"]
+initial_position = 0
+position = Vector2i(730, 330)
+
+[node name="LeopardFolder" parent="Desktop/SystemFolder/Window/PanelContainer/FilingCabinetFolder/Window/PanelContainer" index="0" instance=ExtResource("14_07nky")]
+layout_mode = 0
+text = "Beware of the leopard!"
+
+[node name="Document" parent="Desktop/SystemFolder/Window/PanelContainer/FilingCabinetFolder/Window/PanelContainer/LeopardFolder/Window/PanelContainer" index="0" instance=ExtResource("4_fjy5s")]
+layout_mode = 0
+text = "Secret Plans"
+file_contents = "Take over the world!
+"
+file_size = 0.1
+infected = true
+
 [node name="InfoWindow" parent="." instance=ExtResource("6_a4knm")]
 unique_name_in_owner = true
 title = "Info"
@@ -418,5 +445,7 @@ bus = &"SFX"
 
 [editable path="Desktop/MisfileCrisisFolder"]
 [editable path="Desktop/SystemFolder"]
+[editable path="Desktop/SystemFolder/Window/PanelContainer/FilingCabinetFolder"]
+[editable path="Desktop/SystemFolder/Window/PanelContainer/FilingCabinetFolder/Window/PanelContainer/LeopardFolder"]
 [editable path="EmptyTrashDialog"]
 [editable path="InstallWindow"]
