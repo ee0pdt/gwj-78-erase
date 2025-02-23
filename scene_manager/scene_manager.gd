@@ -45,6 +45,12 @@ func _handle_install() -> void:
 	await loading_tween.finished
 	%VictoryLoading.hide()
 	%SoundVictory.play()
+	
+	# Instance and show credits
+	var credits_scene = preload("res://credits/credits_scene.tscn").instantiate()
+	add_child(credits_scene)
+	credits_scene.start_credits()
+	
 	current_scene.queue_free()
 
 

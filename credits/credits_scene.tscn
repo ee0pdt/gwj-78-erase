@@ -1,0 +1,100 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqwg36ouadnnl"]
+
+[ext_resource type="Script" uid="uid://cdulpxawbplbq" path="res://credits/credits_scene.gd" id="1_credits"]
+[ext_resource type="Theme" uid="uid://cmnrvs380oc6u" path="res://themes/os1_mono.tres" id="1_yg0k8"]
+
+[node name="CreditsScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_yg0k8")
+script = ExtResource("1_credits")
+
+[node name="FadeRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CreditsContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = 300.0
+offset_right = 200.0
+offset_bottom = 700.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="Title" type="Label" parent="CreditsContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "Misfile Crisis"
+horizontal_alignment = 1
+
+[node name="Credits1" type="Label" parent="CreditsContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Created by"
+horizontal_alignment = 1
+
+[node name="Credits2" type="Label" parent="CreditsContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "An Amazing Team"
+horizontal_alignment = 1
+
+[node name="Credits3" type="Label" parent="CreditsContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "For Godot Wild Jam #78"
+horizontal_alignment = 1
+
+[node name="Credits5" type="Label" parent="CreditsContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "~"
+horizontal_alignment = 1
+
+[node name="Credits4" type="Label" parent="CreditsContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Audio by Taylor Brook"
+horizontal_alignment = 1
+
+[node name="Credits6" type="Label" parent="CreditsContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "~"
+horizontal_alignment = 1
+
+[node name="Credits7" type="Label" parent="CreditsContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Code and Monochrome Art by Pete Thorne"
+horizontal_alignment = 1
+
+[node name="Credits8" type="Label" parent="CreditsContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "~"
+horizontal_alignment = 1
+
+[node name="Credits9" type="Label" parent="CreditsContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Additional Colour Art by Silivar"
+horizontal_alignment = 1
