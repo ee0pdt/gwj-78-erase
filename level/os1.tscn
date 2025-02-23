@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bfhe57ypw3i5u"]
+[gd_scene load_steps=39 format=3 uid="uid://bfhe57ypw3i5u"]
 
 [ext_resource type="Theme" uid="uid://cmnrvs380oc6u" path="res://themes/os1_mono.tres" id="1_1b1c6"]
 [ext_resource type="Script" uid="uid://dffmsepw35cgc" path="res://level/level.gd" id="2_1d7e5"]
@@ -15,14 +15,15 @@
 [ext_resource type="Script" uid="uid://0mcjqa8ciue7" path="res://level/states/asleep.gd" id="9_8yfpd"]
 [ext_resource type="Texture2D" uid="uid://dmodkmrjwuepq" path="res://assets/images/os1/Godot.png" id="9_ijmkn"]
 [ext_resource type="PackedScene" uid="uid://jr15xa6g2paw" path="res://menu_bar/menu_bar.tscn" id="9_jb3nm"]
+[ext_resource type="Texture2D" uid="uid://5l2mhrbbq17" path="res://assets/images/os1/Film.png" id="10_ff102"]
 [ext_resource type="Texture2D" uid="uid://ddh5nl5sdg2oi" path="res://assets/images/os1/Folder.png" id="11_0i82s"]
 [ext_resource type="PackedScene" uid="uid://b27g4gvam75qu" path="res://file_system_items/installer/installer.tscn" id="12_k80li"]
-[ext_resource type="Texture2D" uid="uid://b7a1lsvohedn6" path="res://assets/images/InstallerOS1@0.25x.png" id="13_f1j2c"]
 [ext_resource type="AudioStream" uid="uid://pvya3ndgshk5" path="res://assets/audio/music/music_lofi_loop.ogg" id="14_1b1c6"]
 [ext_resource type="AudioStream" uid="uid://dy6lng8qxlkt7" path="res://assets/audio/sfx/sfx_emptyTrash_lofi.wav" id="14_ksk6k"]
 [ext_resource type="Texture2D" uid="uid://bntwmphhc0ty3" path="res://assets/images/os1/DocAsleep.png" id="14_sjly8"]
 [ext_resource type="Texture2D" uid="uid://jj7byq0o2f4d" path="res://assets/images/os1/Disk.png" id="15_0pr33"]
 [ext_resource type="AudioStream" uid="uid://caesi6x3j5l2" path="res://assets/audio/sfx/sfx_throwaway_lofi.wav" id="15_3bxrh"]
+[ext_resource type="Texture2D" uid="uid://b6n405pem5m6s" path="res://assets/images/os1/Install.png" id="15_ff102"]
 [ext_resource type="Texture2D" uid="uid://bykeujamftl7x" path="res://assets/images/os1/Calculator.png" id="16_vv70r"]
 [ext_resource type="AudioStream" uid="uid://cfseyacgyg6np" path="res://assets/audio/sfx/click/sfx_click1.wav" id="17_2cq1c"]
 [ext_resource type="Texture2D" uid="uid://djkaqc5gx5jh6" path="res://assets/images/os1/Paint.png" id="17_ijmkn"]
@@ -102,10 +103,10 @@ hover_icon_file = "uid://feithyqiyd3"
 
 [node name="Cookie" parent="Desktop" instance=ExtResource("4_7hnyc")]
 layout_mode = 0
-offset_left = 694.0
-offset_top = 169.0
-offset_right = 822.0
-offset_bottom = 297.0
+offset_left = 1208.0
+offset_top = 274.0
+offset_right = 1336.0
+offset_bottom = 402.0
 text = "Cookie.zip"
 icon = ExtResource("14_sjly8")
 file_contents = "Cookie cookie cookie"
@@ -121,6 +122,18 @@ offset_bottom = 249.0
 icon = ExtResource("9_ijmkn")
 vertical_icon_alignment = 0
 file_size = 4.2
+
+[node name="GodotApplication2" parent="Desktop" instance=ExtResource("5_euys8")]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 565.0
+offset_right = 146.0
+offset_bottom = 693.0
+text = "aJ81.mov"
+icon = ExtResource("10_ff102")
+vertical_icon_alignment = 0
+file_size = 8.2
+infected = true
 
 [node name="MisfileCrisisFolder" parent="Desktop" instance=ExtResource("8_euys8")]
 layout_mode = 0
@@ -147,7 +160,7 @@ offset_top = 14.0
 offset_right = 280.0
 offset_bottom = 174.0
 text = "Install Misfile Crisis"
-icon = ExtResource("13_f1j2c")
+icon = ExtResource("15_ff102")
 autowrap_mode = 2
 vertical_icon_alignment = 0
 
